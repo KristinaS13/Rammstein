@@ -1,5 +1,5 @@
 ---
-title: "CM Rammstein Portfolio"
+title: "CM Rammstein Portfolio (do not show in class)"
 author: "Kristina Savickaja"
 date: "2/14/2021"
 output: 
@@ -7,6 +7,32 @@ output:
     storyboard: true
     theme: journal
 ---
+
+### NEW Chordograms
+
+```{r}
+knitr::include_graphics("TQP CHORDOGRAM.png")
+knitr::include_graphics("AUSLANDER CHORDOGRAM.png")
+```
+
+***
+1st picture: chordogram for Te Quiero Puta!, 2nd picture: Ausländer (TBU: add titles directly to plots).
+Althought both of these songs are labeled as atypical by me, they are very different when compared by chordograms. For Te Quiero Puta!, D:maj is noted by a darker band throughout the song. Around 160, a yellow line, indicating a bridge has started.
+Ausländer chordogram, on the other hand, shows no clear patterns, except for darker bands at F:7 and D:maj.
+
+
+### NEW Self-similarity matrix
+
+```{r}
+knitr::include_graphics("AUSLANDER.png")
+knitr::include_graphics("DU HAST.png")
+```
+
+***
+1st picture: SSM for Ausländer, 2nd picture: SSM for Du hast (TBU: add titles directly to plots).
+The self-similarity matrix for Ausländer shows very clear repetitiveness in both chroma and timbre plots. The checkerboard pattern shows that a passage is repeated throughout the song. In Du hast timbre plot, we can see a couple of thin (60, 170) yellow lines, which highlight novel parts, whereas in Ausländer, the yellow lines are thicker and re-occur throughout the song.
+
+
 ### Rammstein: Exploring Album Acclaim through Spotify Audio Features
 **Rammstein** is a German Neue Deutsche Härte band known for heavy riffs, thought provoking, although controversial, lyrics and flame-fuelled live performances. \
 \
