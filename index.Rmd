@@ -102,7 +102,7 @@ pop_boxplot <- ggplot(pop_overall, aes(x = album.year,
 ggplotly(pop_boxplot, tooltip = c("track.popularity", "track.name"))
 ```
 
-### NEW Heatmap table for typical/atypical track audio features
+### (A)Typical Rammstein: Perception vs Computation
 ```{r}
 heatmap_data <- read_csv(file = "heatmap_test.csv")
 
@@ -124,10 +124,20 @@ heatmap_table <- ggplot(heatmap_data, aes(x = Feature,
         legend.text = element_text(size = 7),
         legend.title = element_text(size = 9),
         panel.grid = element_blank()) +
-  ggtitle("Spotify Audio Features for typical and atypical Rammstein")
+  ggtitle("Spotify Audio Features for typical and atypical Rammstein songs")
 
 ggplotly(heatmap_table)
 ```
+
+***
+(tbu: playlist, add features that are not 0-1 to a separate table, re-arrange values??? )
+
+For detailed, low-level audio analysis, typical and atypical songs have to be established. What songs would make you exclaim “yes, of course this is Rammstein”? Personally, I chose Du Hast and Ich will. Of course, this approach is highly subjective and influenced by a plethora of external reasons, such as track popularity, familiarity with the artist, individual biases and tastes. To expand the notion of “typical” to include not only my personal judgements, but also those of a potentially impartial algorithm, standardizes z-scores based on all audio features were computed. The songs that scored nearest to 0, mainly Feuer Frei! and Hallomann were chosen as representatives. 
+
+The same approach was taken when selecting atypical songs. In my opinion, Te Quiero Puta! may be the most un-Rammstein song they have ever released. In the context of all their other recordings, this metal-meets-mariachi song sounds novel. Another unique track is Ausländer. It sounds so catchy and pop-y, that it might have been a successful (rock)club song. Unsurprisingly, z-scores indicated that Ein Lied and Roter Sand – Orchester Version differ from the rest of the corpus. 
+
+Summary: typical songs - Feuer Frei!, Hallomann, Ich will, Du Hast; atypical songs – Ein Lied, Roter Sand – Orchester Version, Te Quiero Puta!, Ausländer.
+ 
 
 ### Chordograms
 
@@ -184,7 +194,7 @@ knitr::include_graphics("mode.png")
 
 ***
 
-(TBU: tabs, improve conclusion)
+(TBU: tabs, improve conclusion, add more "high valence = positive explanations)
 
 On the left, density plots of Spotify audio features for Rammstein’s studio albums are presented. 
 Danceability seems to vary per album. It is clear that Sehnsucht (and Herzeleid) have the highest overall danceability. Conversely, the majority of songs from Rosenrot are located lower on the danceability scale. Furthermore, danceability is one of the most mysterious Spotify’s audio features, as the listener’s perception of danceability for a song sometimes conflicts with the value awarded by Spotify. For instance, Du Riechst So Gut has a danceability score of 0.67, whereas I'm Looking Forward to Joining You, Finally (Nine Inch Nails) was awarded with a striking score of 0.795.
