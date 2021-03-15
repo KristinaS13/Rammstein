@@ -41,9 +41,9 @@ knitr::include_graphics("tempo histogram.png")
 knitr::include_graphics("typical atypical histogram key mode.png")
 ```
 
-### NEW Distance matrix and clustering based on danceability, loudness, energy, tempo
+### Clustering: Sehnsucht & Mutter are Neighbours, Rosenrot is their Distant Friend
 ```{r}
-knitr::include_graphics("Distance matrix for albums.png")
+knitr::include_graphics("Distance matrix for albums1.png")
 knitr::include_graphics("Hierarchical clustering.png")
 ```
 
@@ -102,6 +102,10 @@ pop_boxplot <- ggplot(pop_overall, aes(x = album.year,
 ggplotly(pop_boxplot, tooltip = c("track.popularity", "track.name"))
 ```
 
+***
+(tbu)
+
+
 ### (A)Typical Rammstein: Perception vs Computation
 ```{r}
 heatmap_data <- read_csv(file = "heatmap_test.csv")
@@ -130,7 +134,7 @@ ggplotly(heatmap_table)
 ```
 
 ***
-(tbu: playlist, add features that are not 0-1 to a separate table, re-arrange values??? )
+(tbu: playlist, add features that are not 0-1 to a separate table, re-arrange features)
 
 For detailed, low-level audio analysis, typical and atypical songs have to be established. What songs would make you exclaim “yes, of course this is Rammstein”? Personally, I chose Du Hast and Ich will. Of course, this approach is highly subjective and influenced by a plethora of external reasons, such as track popularity, familiarity with the artist, individual biases and tastes. To expand the notion of “typical” to include not only my personal judgements, but also those of a potentially impartial algorithm, standardizes z-scores based on all audio features were computed. The songs that scored nearest to 0, mainly Feuer Frei! and Hallomann were chosen as representatives. 
 
@@ -176,7 +180,7 @@ Additionally, **Rammstein** has quite a recognizable sound that is usually attri
 Thus, in this portfolio, I will investigate whether Spotyfy's Audio Features and Popularity Score can provide insights on the following questions: \
 1. Why *Mutter*/*Sehnsucht* are so well-received, whereas *Rosenrot* is subject to criticism? \
 2. **Rammstein** signature sound: what audio features are constant throughout the discography? \
-3. Typical and atypical **Rammstein**: exploring songs with (computation vs perception). \
+3. Typical and atypical **Rammstein**: exploring songs with audio features (computation vs perception). \
 \
 **Corpus** \
 The corpus consists of released studio albums by **Rammstein** (7 albums, 82 songs), all of which are available on Spotify. In my opinion, the corpus is representative of the whole discography, as the majority of songs are included in the studio albums. The exceptions are *Das Modell* (non-album single, 1997), *Du riechst so gut '98* (which is a version of *Du riechst so gut* (*Herzeleid*, 1995) with a shorter intro) and *Mein Land* (exclusive to compilation album *Made in Germany 1995–2011* (2011)). Live albums are not taken into account, as the (fan-)reviewers usually do not rate live albums. Furthermore, there are no songs exclusive to live albums. \
@@ -194,7 +198,7 @@ knitr::include_graphics("mode.png")
 
 ***
 
-(TBU: tabs, improve conclusion, add more "high valence = positive explanations)
+(TBU: tabs, improve conclusion, add more "high valence = positive explanations", other features - for Q3)
 
 On the left, density plots of Spotify audio features for Rammstein’s studio albums are presented. 
 Danceability seems to vary per album. It is clear that Sehnsucht (and Herzeleid) have the highest overall danceability. Conversely, the majority of songs from Rosenrot are located lower on the danceability scale. Furthermore, danceability is one of the most mysterious Spotify’s audio features, as the listener’s perception of danceability for a song sometimes conflicts with the value awarded by Spotify. For instance, Du Riechst So Gut has a danceability score of 0.67, whereas I'm Looking Forward to Joining You, Finally (Nine Inch Nails) was awarded with a striking score of 0.795.
