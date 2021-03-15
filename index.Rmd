@@ -1,5 +1,5 @@
 ---
-title: "CM Rammstein Portfolio (do not show in class) The desing is a mess, I'm working on it!"
+title: "Rammstein: Exploring Album Acclaim through Spotify (do not show in class) Portfolio is a mess, but im working on it!"
 author: "Kristina Savickaja"
 date: "2/14/2021"
 output: 
@@ -7,12 +7,129 @@ output:
     storyboard: true
     theme: journal
 ---
+```{r setup, include=FALSE}
+library(tidyverse)
+library(spotifyr)
+library(fmsb)
+library(ggradar)
+library(ggplot2)
+library(tidyverse)
+library(statebins)
+library(Rmisc)
+library(ggiraph)
+library(ggplotlyExtra)
+library(plotly)
+library(scales)
+library(lubridate)
+library(compmus)
+library(factoextra)
+library(viridisLite)
+library(ggiraphExtra)
+library(gridExtra)
+```
 
-### NEW Chordograms
+### NEW tempo histogram
+```{r}
+knitr::include_graphics("tempo histogram.png")
+```
+
+### NEW Histogram of keys of typical/atypical songs
+```{r}
+knitr::include_graphics("typical atypical histogram key mode.png")
+```
+
+### NEW Distance matrix and clustering based on danceability, loudness, energy, tempo
+```{r}
+knitr::include_graphics("Distance matrix for albums.png")
+knitr::include_graphics("Hierarchical clustering.png")
+```
+
+### NEW Plotting popularity
+```{r}
+pop_overall <- read_csv(file = "pop_sel_alb_tot.csv")
+
+pop_overall$album.year <- factor(pop_overall$album.year, levels = c("Herzeleid (1995)", "Sehnsucht (1997)", "Mutter (2001)", "REISE, REISE (2004)", "ROSENROT (2005)", "LIEBE IST FÜR ALLE DA (2009)", "RAMMSTEIN (2019)"))
+
+pop_alb <- read_csv(file = "pop_only_albums.csv")
+
+pop_boxplot <- ggplot(pop_overall, aes(x = album.year, 
+                                       y = track.popularity,
+                                       label = track.name,
+                                       colour = album.year)) +
+  geom_boxplot(show.legend = FALSE,
+               alpha = 0.4,
+               outlier.shape = NA) +
+  geom_jitter(data = pop_overall, 
+              width = 0.25, 
+              alpha = 0.7,
+              show.legend = FALSE) +
+  geom_hline(yintercept = 81, linetype = "dashed", color = "red") +
+  geom_text(aes("REISE, REISE (2004)", 83, label = "Rammstein Popularity", vjust = -1), colour = "black") +
+  labs(title = "Spotify popularity metric: song, album, artist. (+ indicates album's popularity)",
+       x = "Albums",
+       y = "Popularity") +
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 45),
+        axis.line = element_line(colour = "black"),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.background = element_rect(fill = 'white'),
+        panel.grid.major.y = element_line(color = "grey")) +
+  scale_color_manual(name = "album.year", values = c("orange", 
+                                                     "darkblue", 
+                                                     "darkolivegreen2", 
+                                                     "orangered2", 
+                                                     "royalblue2", 
+                                                     "wheat4", 
+                                                     "tan")) +
+  geom_point(aes(x = "Herzeleid (1995)", y = 67), colour = "black", shape = 3) +
+  geom_text(aes("Herzeleid (1995)", 69, label = "67", vjust = -1), size = 3, colour = "black") + 
+  geom_point(aes(x = "Sehnsucht (1997)", y = 74), colour = "black", shape = 3) +
+  geom_text(aes("Sehnsucht (1997)", 76, label = "74", vjust = -1), size = 3, colour = "black") + 
+  geom_point(aes(x = "Mutter (2001)", y = 75), colour = "black", shape = 3) +
+  geom_text(aes("Mutter (2001)", 77, label = "75", vjust = -1), size = 3, colour = "black") + 
+  geom_point(aes(x = "REISE, REISE (2004)", y = 73), colour = "black", shape = 3) +
+  geom_text(aes("REISE, REISE (2004)", 75, label = "73", vjust = -1), size = 3, colour = "black") + 
+  geom_point(aes(x = "ROSENROT (2005)", y = 68), colour = "black", shape = 3) +
+  geom_text(aes("ROSENROT (2005)", 70, label = "68", vjust = -1), size = 3, colour = "black") + 
+  geom_point(aes(x = "LIEBE IST FÜR ALLE DA (2009)", y = 70), colour = "black", shape = 3) +
+  geom_text(aes("LIEBE IST FÜR ALLE DA (2009)", 72, label = "70", vjust = -1), size = 3, colour = "black") + 
+  geom_point(aes(x = "RAMMSTEIN (2019)", y = 77), colour = "black", shape = 3) + 
+  geom_text(aes("RAMMSTEIN (2019)", 79, label = "77", vjust = -1), size = 3, colour = "black")
+ggplotly(pop_boxplot, tooltip = c("track.popularity", "track.name"))
+```
+
+### NEW Heatmap table for typical/atypical track audio features
+```{r}
+heatmap_data <- read_csv(file = "heatmap_test.csv")
+
+heatmap_table <- ggplot(heatmap_data, aes(x = Feature, 
+                                          y = Song, 
+                                          fill = Value)) +
+  geom_tile() + 
+  theme_minimal() + 
+  scale_x_discrete(position = "top") + 
+  scale_fill_gradient(low = "#f0c7c7",
+                      high = "#db0707",
+                      space = "Lab",
+                      na.value = "grey50",
+                      guide = "colourbar",
+                      aesthetics = "fill") + 
+  theme(axis.ticks.x = element_blank(),
+        axis.ticks.y  =  element_blank(),
+        axis.text = element_text(size = 7),
+        legend.text = element_text(size = 7),
+        legend.title = element_text(size = 9),
+        panel.grid = element_blank()) +
+  ggtitle("Spotify Audio Features for typical and atypical Rammstein")
+
+ggplotly(heatmap_table)
+```
+
+### Chordograms
 
 ```{r}
-knitr::include_graphics("TQP CHORDOGRAM.png")
-knitr::include_graphics("AUSLANDER CHORDOGRAM.png")
+knitr::include_graphics("chordograms.png")
 ```
 
 ***
@@ -21,11 +138,11 @@ Althought both of these songs are labeled as atypical by me, they are very diffe
 Ausländer chordogram, on the other hand, shows no clear patterns, except for darker bands at F:7 and D:maj.
 
 
-### NEW Self-similarity matrix
+### Self-similarity matrix
 
 ```{r}
-knitr::include_graphics("AUSLANDER.png")
-knitr::include_graphics("DU HAST.png")
+knitr::include_graphics("self similarity auslander du hast.png")
+knitr::include_graphics("self similarity roter sand halloman.png")
 ```
 
 ***
@@ -56,8 +173,10 @@ The corpus consists of released studio albums by **Rammstein** (7 albums, 82 son
 
 ### Feature overview by album
 
-```{r figurename, echo = FALSE, fig.cap = "Spotify Audio Feature Densities of Rammstein Albums", out.width = '100%'}
-knitr::include_graphics("Rplot.png")
+```{r figurename, echo = FALSE, out.width = '100%'}
+knitr::include_graphics("geom_density album summary.png")
+knitr::include_graphics("key histograms.png")
+knitr::include_graphics("mode.png")
 ```
 
 ***
@@ -69,7 +188,7 @@ TBU: change mode and key graphs to histograms, make plots with only 3 aforementi
 ### Atypical song: Ausländer chroma features
 
 ```{r}
-knitr::include_graphics("Auslander - Manhattan.png")
+knitr::include_graphics("chroma features.png")
 ```
 
 

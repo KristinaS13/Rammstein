@@ -1,0 +1,57 @@
+﻿Song,Feature,Value
+Ausländer,Danceability,0.681
+Te Quiero Puta!,Danceability,0.496
+Ein Lied,Danceability,0.442
+Roter Sand - Orchester Version,Danceability,0.246
+Feuer Frei!,Danceability,0.64
+Ich will,Danceability,0.648
+Hallomann,Danceability,0.419
+Du Hast,Danceability,0.491
+Ausländer,Energy,0.912
+Te Quiero Puta!,Energy,0.934
+Ein Lied,Energy,0.19
+Roter Sand - Orchester Version,Energy,0.34
+Feuer Frei!,Energy,0.922
+Ich will,Energy,0.896
+Hallomann,Energy,0.706
+Du Hast,Energy,0.966
+Ausländer,Speechiness,0.0912
+Te Quiero Puta!,Speechiness,0.145
+Ein Lied,Speechiness,0.0335
+Roter Sand - Orchester Version,Speechiness,0.0315
+Feuer Frei!,Speechiness,0.0385
+Ich will,Speechiness,0.041
+Hallomann,Speechiness,0.038
+Du Hast,Speechiness,0.0463
+Ausländer,Acousticness,0.000757
+Te Quiero Puta!,Acousticness,7.84E-05
+Ein Lied,Acousticness,0.535
+Roter Sand - Orchester Version,Acousticness,0.556
+Feuer Frei!,Acousticness,0.00369
+Ich will,Acousticness,0.00138
+Hallomann,Acousticness,0.0171
+Du Hast,Acousticness,9.12E-05
+Ausländer,Instrumentalness,0.00136
+Te Quiero Puta!,Instrumentalness,0.344
+Ein Lied,Instrumentalness,0.438
+Roter Sand - Orchester Version,Instrumentalness,0.0738
+Feuer Frei!,Instrumentalness,0.055
+Ich will,Instrumentalness,0.000819
+Hallomann,Instrumentalness,0.0244
+Du Hast,Instrumentalness,0.346
+Ausländer,Liveness,0.359
+Te Quiero Puta!,Liveness,0.115
+Ein Lied,Liveness,0.0928
+Roter Sand - Orchester Version,Liveness,0.117
+Feuer Frei!,Liveness,0.332
+Ich will,Liveness,0.0879
+Hallomann,Liveness,0.0998
+Du Hast,Liveness,0.153
+Ausländer,Valence,0.479
+Te Quiero Puta!,Valence,0.268
+Ein Lied,Valence,0.0366
+Roter Sand - Orchester Version,Valence,0.0792
+Feuer Frei!,Valence,0.716
+Ich will,Valence,0.468
+Hallomann,Valence,0.143
+Du Hast,Valence,0.223
