@@ -174,7 +174,7 @@ The corpus consists of released studio albums by **Rammstein** (7 albums, 82 son
 
 
 
-### Feature overview by album
+### Audio Feature Overview per Album: Distinctive Danceability, Energy, Valence, Loudness and Tempo 
 
 ```{r figurename, echo = FALSE, out.width = '100%'}
 knitr::include_graphics("geom_density album summary.png")
@@ -184,9 +184,21 @@ knitr::include_graphics("mode.png")
 
 ***
 
-Interesting plots: key, danceability, loudness, energy.
-Suggested patterns: Mutter differs in key, otherwise Mutter, Rosenrot and Sehnsucht do not seem to differ.
-TBU: change mode and key graphs to histograms, make plots with only 3 aforementioned albums, add in-depth interpretation, change size of the plots, plotly
+(TBU: tabs, improve conclusion)
+
+On the left, density plots of Spotify audio features for Rammstein’s studio albums are presented. 
+Danceability seems to vary per album. It is clear that Sehnsucht (and Herzeleid) have the highest overall danceability. Conversely, the majority of songs from Rosenrot are located lower on the danceability scale. Furthermore, danceability is one of the most mysterious Spotify’s audio features, as the listener’s perception of danceability for a song sometimes conflicts with the value awarded by Spotify. For instance, Du Riechst So Gut has a danceability score of 0.67, whereas I'm Looking Forward to Joining You, Finally (Nine Inch Nails) was awarded with a striking score of 0.795.
+Energy distribution per album shows that overall, Rammstein’s discography boasts high energy. Sehnsucht’s energy is concentrated at around 0.95, while Rosenrot’s energy peak is seen at 0.7.
+Next, valence plot illustrates Rosenrot as a clear outlier. 
+Another interesting visualization is loudness. Both Rosenrot and Sehnsucht exhibit a strong peak at -5. Although Mutter’s highest density shares the same value, the peak is weak.
+Finally, regarding tempo, Rosenrot has more songs in 160 (BPM) tempo range than other albums. 
+
+Second tab highlights the key distribution per album. Spotify uses standard Pitch class notation, so the key values range from 0 (C) to 11 (B). Every Rammstein album has notable variation in keys, averaging at 7 keys per album. Mutter seems to be an outlier, with only 4 keys implemented, mainly 2 (D), 3 (D♯/E♭), 4 (E) and 9 (A). Overall, no clear key preference can be seen throughout the discography.
+
+The third tab shows a stacked mode bar chart, where 0 represents Minor mode and 1 corresponds to Major mode. As can be seen, major mode is preferred throughout all albums. This might be a shocker for some, as Rammstein’s music does not sound necessarily positive, which only further demonstrates that major ≠ happy and minor ≠ sad.
+
+Conclusion: Mutter, Sehnsucht, Rosenrot are going to be analyzed in-depth based on danceability, energy, valence, loudness and tempo. 
+
 
 ### Atypical song: Ausländer chroma features
 
