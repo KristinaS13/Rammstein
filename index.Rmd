@@ -6,8 +6,6 @@ output:
   flexdashboard::flex_dashboard:
     storyboard: true
     theme: journal
-    favicon: Favicon.png
-
 ---
 ```{r setup, include=FALSE}
 library(tidyverse)
