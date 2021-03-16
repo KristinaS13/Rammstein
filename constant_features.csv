@@ -1,0 +1,29 @@
+﻿Feature,Album,Value
+Speechiness,Rammstein (2019),0.054281818
+Speechiness,Liebe ist für alle da (2009),0.04858125
+Speechiness,Rosenrot (2005),0.051554545
+Speechiness,"Reise, Reise (2004)",0.055736364
+Speechiness,Mutter (2001),0.048663636
+Speechiness,Sehnsucht (1997),0.060136364
+Speechiness,Herzeleid (1995),0.054
+Liveness,Rammstein (2019),0.132890909
+Liveness,Liebe ist für alle da (2009),0.13375
+Liveness,Rosenrot (2005),0.127590909
+Liveness,"Reise, Reise (2004)",0.224436364
+Liveness,Mutter (2001),0.2386
+Liveness,Sehnsucht (1997),0.1734
+Liveness,Herzeleid (1995),0.234363636
+Acousticness,Rammstein (2019),0.079483036
+Acousticness,Liebe ist für alle da (2009),0.113436813
+Acousticness,Rosenrot (2005),0.052225655
+Acousticness,"Reise, Reise (2004)",0.003153591
+Acousticness,Mutter (2001),0.006841396
+Acousticness,Sehnsucht (1997),0.032445455
+Acousticness,Herzeleid (1995),0.000964836
+Instrumentalness,Rammstein (2019),0.042492273
+Instrumentalness,Liebe ist für alle da (2009),0.328129375
+Instrumentalness,Rosenrot (2005),0.174730818
+Instrumentalness,"Reise, Reise (2004)",0.139664396
+Instrumentalness,Mutter (2001),0.125409273
+Instrumentalness,Sehnsucht (1997),0.121427273
+Instrumentalness,Herzeleid (1995),0.296893818
