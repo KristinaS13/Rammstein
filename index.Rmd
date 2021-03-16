@@ -6,6 +6,8 @@ output:
   flexdashboard::flex_dashboard:
     storyboard: true
     theme: journal
+    favicon: Favicon.png
+
 ---
 ```{r setup, include=FALSE}
 library(tidyverse)
@@ -26,6 +28,8 @@ library(factoextra)
 library(viridisLite)
 library(ggiraphExtra)
 library(gridExtra)
+library(flexdashboard)
+library (DiagrammeR)
 ```
 
 ### NEW tempo histogram
@@ -35,6 +39,7 @@ knitr::include_graphics("tempo histogram.png")
 
 ***
 (My computer cannot handle proper tempograms, so I came up with this) Moelants (2002, link tba) showed that there is a certain preferred tempo at around 125 BPM. This natural tempo corresponds with both repeated motor actions and perceived tempo in musical data. As can be seen from the plot, Rammsteins songs mostly fall in 115-140 BPM frame. Interestingly, WEIT WEG does not sound that fast perceptually. This disproportional BPM score might indicate a flaw in the tempo estimation algorithm used by Spotify.
+
 
 ### NEW Histogram of keys of typical/atypical songs
 ```{r}
@@ -119,7 +124,8 @@ constants_plot <- ggplot(data = constants, aes(x = Album,
   geom_line(aes(colour = Feature)) +
   geom_point(aes(color = Feature), 
              alpha = 0.5, 
-             shape = 23, size = 2) + 
+             shape = 23, 
+             size = 2.3) + 
   theme(axis.text.x = element_text(angle = 45),
         axis.line = element_line(colour = "black"),
         panel.grid.minor.x = element_blank(),
@@ -195,7 +201,9 @@ knitr::include_graphics("self similarity roter sand halloman.png")
 The self-similarity matrix for Ausländer shows very clear repetitiveness in both chroma and timbre plots. The checkerboard pattern shows that a passage is repeated throughout the song. In Du hast timbre plot, we can see a couple of thin (60, 170) yellow lines, which highlight novel parts, whereas in Ausländer, the yellow lines are thicker and re-occur throughout the song.
 
 
+
 ### Rammstein: Exploring Album Acclaim through Spotify Audio Features
+
 **Rammstein** is a German Neue Deutsche Härte band known for heavy riffs, thought provoking, although controversial, lyrics and flame-fuelled live performances. \
 \
 Almost unanimously, critics and fans alike agree on the worst **Rammstein** album, which is said to be *Rosenrot* (2005). Listeners note that the album is “[…] a disjointed effort glued together with some iron-clad bangers” ([Chillingworth, 2019](https://www.loudersound.com/features/every-rammstein-album-ranked-from-worst-to-best)) and “[…] feels like a thrown-together collection of B-sides (because, essentially, it was)” ([sean_themighty, 2019](https://www.reddit.com/r/Rammstein/comments/ap83rs/anybody_agree/)). \
@@ -213,7 +221,6 @@ Thus, in this portfolio, I will investigate whether Spotyfy's Audio Features and
 **Corpus** \
 The corpus consists of released studio albums by **Rammstein** (7 albums, 82 songs), all of which are available on Spotify. In my opinion, the corpus is representative of the whole discography, as the majority of songs are included in the studio albums. The exceptions are *Das Modell* (non-album single, 1997), *Du riechst so gut '98* (which is a version of *Du riechst so gut* (*Herzeleid*, 1995) with a shorter intro) and *Mein Land* (exclusive to compilation album *Made in Germany 1995–2011* (2011)). Live albums are not taken into account, as the (fan-)reviewers usually do not rate live albums. Furthermore, there are no songs exclusive to live albums. \
 \
-
 
 
 ### Audio Feature Overview per Album: Distinctive Danceability, Energy, Valence, Loudness and Tempo 
