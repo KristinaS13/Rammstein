@@ -36,6 +36,8 @@ knitr::include_graphics("all features prediction.png")
 ```
 
 ***
+k-Nearest Neighbour (knn) classification algorithm has been applied to the dataset in order to classify the songs into albums using computational methods. Unfortunately, knn performs poorly on the present dataset. The best obtained score is 5/11 songs correctly classified, that is for Herzeleid. Precision and recall scores, summarized below, indicate an abundance of both false negatives and false positives. For instance, for RAMMSTEIN album, both precision and recall are 0. Low recall means that songs from a particular album are not categorized into the same album by the algorithm. Low precision means that the algorithm also thinks that a lot of songs from other albums belong to an album in question. The only acceptable scores are for Herzeleid, although recall is still quite poor.
+
 | Album                 | Precision | Recall    |
 |-----------------------|-----------|-----------|
 | Herzeleid             | 0.7142857 | 0.4545455 |
@@ -46,7 +48,9 @@ knitr::include_graphics("all features prediction.png")
 | ROSENROT              | 0.2307692 | 0.2727273 |
 | Sehnsucht             | 0.2500000 | 0.2727273 |
 
-### NEW Clustering: Sehnsucht & Mutter are Neighbours, Rosenrot is their Distant Friend
+Choosing top predictors (loudness, danceability, acousticness) and features used for previous analyses (danceability, energy, valence, loudness and tempo) did not majorly improve things (should I add another table with precisions and recalls? The values for both are also awful)
+
+### NEW K-means and Clustering: Sehnsucht & Mutter are Neighbours, Rosenrot is their Distant Friend
 ```{r}
 knitr::include_graphics("Distance matrix for albums1.png")
 knitr::include_graphics("Hierarchical clustering.png")
