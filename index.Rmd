@@ -36,7 +36,7 @@ knitr::include_graphics("all features prediction.png")
 ```
 
 ***
-k-Nearest Neighbour (knn) classification algorithm has been applied to the dataset in order to classify the songs into albums using computational methods. Unfortunately, knn performs poorly on the present dataset. The best obtained score is 5/11 songs correctly classified, that is for Herzeleid. Precision and recall scores, summarized below, indicate an abundance of both false negatives and false positives. For instance, for RAMMSTEIN album, both precision and recall are 0. Low recall means that songs from a particular album are not categorized into the same album by the algorithm. Low precision means that the algorithm also thinks that a lot of songs from other albums belong to an album in question. The only acceptable scores are for Herzeleid, although recall is still quite poor.
+k-Nearest Neighbour (k-NN) classification algorithm has been applied to the dataset in order to classify the songs into albums using computational methods. Unfortunately, k-NN performs poorly on the present dataset. The best obtained score is 5/11 songs correctly classified, that is for Herzeleid. Precision and recall scores, summarized below, indicate an abundance of both false negatives and false positives. For instance, for RAMMSTEIN album, both precision and recall are 0. Low recall means that songs from a particular album are not categorized into the same album by the algorithm. Low precision means that the algorithm also thinks that a lot of songs from other albums belong to an album in question. The only acceptable scores are for Herzeleid, although recall is still quite poor.
 
 | Album                 | Precision | Recall    |
 |-----------------------|-----------|-----------|
@@ -57,7 +57,11 @@ knitr::include_graphics("Hierarchical clustering.png")
 ```
 
 ***
-(tba)
+K-NN is a supervised learning algorithm that is useful for classification and regression problems. As was seen from the knn analysis, the performance is poor. So, I have decided to use an unsupervised learning algorithm made to tackle clustering problems, that is k-means. Here, I have tried to group the albums into bigger clusters, which would show which albums are similar and which are different. The distance matrix based on danceability, energy, valence, loudness and tempo shows the distance between album pairs. The closer to 0 (black colour), the less distance, thus the more similar are albums. There is a black diagonal line that indicates that albums are identical, that is distance = 0, because we are comparing an album to itself. \
+
+Hierarchical clustering algorithm was used to group similar objects together. Objects within each cluster are similar to each other. The amount of clusters (3) was chosen after applying the "Elbow" method. 
+In this method, sum of squares at each number of clusters (in my case, from 2 to 5) are calculated and plotted. Afterwards, by determining the "elbow" (a point at which the slope changes from steep to shallow), the user can determine an optimal number of clusters. This method is not as precise as other, more mathematically-rigorous cluster-validation methods, but seemed to work for the current (small) dataset. \
+Indeed, as can be seen from both the matrix and hierarchical clustering, Sehnsucht and Mutter share more similarities with each other than with Rosenrot, which is grouped with Rammstein. (should I include k-means clustering?) \
 
 
 ### Tempo histogram
