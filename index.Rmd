@@ -48,7 +48,7 @@ k-Nearest Neighbour (k-NN) classification algorithm has been applied to the data
 | ROSENROT              | 0.2307692 | 0.2727273 |
 | Sehnsucht             | 0.2500000 | 0.2727273 |
 
-Choosing top predictors (loudness, danceability, acousticness) and features used for previous analyses (danceability, energy, valence, loudness and tempo) did not majorly improve things (should I add another table with precisions and recalls? The values for both are also awful)
+Choosing top predictors (loudness, c12, c04) and features used for previous analyses (danceability, energy, valence, loudness and tempo) did not majorly improve things (should I add another table with precisions and recalls for these? The values for both are also awful)
 
 ### NEW K-means and Clustering: Sehnsucht & Mutter are Neighbours, Rosenrot is their Distant Friend
 ```{r}
