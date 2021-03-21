@@ -36,14 +36,24 @@ knitr::include_graphics("all features prediction.png")
 ```
 
 ***
-(tba)
-
+| Album                 | Precision | Recall    |
+|-----------------------|-----------|-----------|
+| Herzeleid             | 0.7142857 | 0.4545455 |
+| LIEBE IST FÜR ALLE DA | 0.2500000 | 0.1875000 |
+| Mutter                | 0.1428571 | 0.1818182 | 
+| RAMMSTEIN             | 0.0000000 | 0.0000000 |
+| Reise, Reise          | 0.2000000 | 0.1818182 |
+| ROSENROT              | 0.2307692 | 0.2727273 |
+| Sehnsucht             | 0.2500000 | 0.2727273 |
 
 ### NEW Clustering: Sehnsucht & Mutter are Neighbours, Rosenrot is their Distant Friend
 ```{r}
 knitr::include_graphics("Distance matrix for albums1.png")
 knitr::include_graphics("Hierarchical clustering.png")
 ```
+
+***
+(tba)
 
 
 ### Tempo histogram
