@@ -1,5 +1,5 @@
 ---
-title: "Rammstein: Exploring Album Acclaim through Spotify (do not show in class) Portfolio is a mess, but im working on it!"
+title: "Rammstein: Exploring Album Acclaim through Spotify (do not show in class)"
 author: "Kristina Savickaja"
 date: "2/14/2021"
 output: 
@@ -30,7 +30,7 @@ library(flexdashboard)
 library (DiagrammeR)
 ```
 
-### NEW tempo histogram
+### Tempo histogram
 ```{r}
 knitr::include_graphics("tempo histogram.png")
 ```
@@ -38,19 +38,13 @@ knitr::include_graphics("tempo histogram.png")
 ***
 (My computer cannot handle proper tempograms, so I came up with this) Moelants (2002, link tba) showed that there is a certain preferred tempo at around 125 BPM. This natural tempo corresponds with both repeated motor actions and perceived tempo in musical data. As can be seen from the plot, Rammsteins songs mostly fall in 115-140 BPM frame. Interestingly, WEIT WEG does not sound that fast perceptually. This disproportional BPM score might indicate a flaw in the tempo estimation algorithm used by Spotify.
 
-
-### NEW Histogram of keys of typical/atypical songs
-```{r}
-knitr::include_graphics("typical atypical histogram key mode.png")
-```
-
 ### Clustering: Sehnsucht & Mutter are Neighbours, Rosenrot is their Distant Friend
 ```{r}
 knitr::include_graphics("Distance matrix for albums1.png")
 knitr::include_graphics("Hierarchical clustering.png")
 ```
 
-### NEW Plotting popularity
+### Plotting popularity
 ```{r}
 pop_overall <- read_csv(file = "pop_sel_alb_tot.csv")
 
