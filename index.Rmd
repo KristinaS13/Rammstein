@@ -141,6 +141,7 @@ ggplotly(constants_plot)
 ### (A)Typical Rammstein: Perception vs Computation
 ```{r}
 heatmap_data <- read_csv(file = "heatmap_test.csv")
+heatmap_data[, 3] <- round(heatmap_data[, 3], digits = 3)
 
 heatmap_table <- ggplot(heatmap_data, aes(x = Feature, 
                                           y = Song, 
@@ -148,6 +149,7 @@ heatmap_table <- ggplot(heatmap_data, aes(x = Feature,
   geom_tile() + 
   theme_minimal() + 
   scale_x_discrete(position = "top") + 
+  scale_y_discrete(limits = c("Roter Sand - Orchester Version", "Ein Lied", "Ausländer", "Te Quiero Puta!", "Hallomann", "Feuer Frei!", "Ich will", "Du Hast")) +
   scale_fill_gradient(low = "#f0c7c7",
                       high = "#db0707",
                       space = "Lab",
