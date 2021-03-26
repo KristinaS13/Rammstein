@@ -70,6 +70,14 @@ Hierarchical clustering algorithm was used to group similar objects together. Ob
 In this method, sum of squares at each number of clusters (in my case, from 2 to 5) are calculated and plotted. Afterwards, by determining the "elbow" (a point at which the slope changes from steep to shallow), the user can determine an optimal number of clusters. This method is not as precise as other, more mathematically-rigorous cluster-validation methods, but seemed to work for the current (small) dataset. \
 Indeed, as can be seen from both the matrix and hierarchical clustering, Sehnsucht and Mutter share more similarities with each other than with Rosenrot, which is grouped with Rammstein. (should I include k-means clustering?) \
 
+### Valence
+```{r}
+knitr::include_graphics("emotions.png")
+```
+
+***
+(tba)
+
 
 ### Tempo histogram
 ```{r}
