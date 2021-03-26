@@ -29,6 +29,10 @@ library(ggiraphExtra)
 library(gridExtra)
 library(flexdashboard)
 library(DiagrammeR)
+library(data.table)
+library(dplyr)
+library(formattable)
+library(tidyr)
 ```
 
 ### NEW Which album is this song from? Algorithm is *very* confused by Rammstein
@@ -208,6 +212,17 @@ The same approach was taken when selecting atypical songs. In my opinion, Te Qui
 
 Summary: typical songs - Feuer Frei!, Hallomann, Ich will, Du Hast; atypical songs – Ein Lied, Roter Sand – Orchester Version, Te Quiero Puta!, Ausländer.
  
+
+### Extra things
+```{r}
+table_typatyp <- read_csv(file = "other_features.csv")
+
+table_ta <- formattable(table_typatyp, 
+            align =c("l","c","c", "c", "r"),
+            list('Loudness' = color_tile("#f0c7c7", "#db0707"), 
+                 'Tempo' = color_tile("#f0c7c7", "#db0707")))
+table_ta
+```
 
 ### Chordograms
 
