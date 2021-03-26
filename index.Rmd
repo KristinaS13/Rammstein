@@ -268,7 +268,7 @@ The self-similarity matrix for Ausländer shows very clear repetitiveness in bot
 
 ### Rammstein: Exploring Album Acclaim through Spotify Audio Features {data-commentary-width=800}
 
-<div style="max-width:1110px; margin: 0 auto;">
+<div style="max-width:1920px; margin: 0 auto;">
 
 **Rammstein** is a German Neue Deutsche Härte band known for heavy riffs, thought provoking, although controversial, lyrics and flame-fuelled live performances. \
 \
