@@ -266,7 +266,9 @@ The self-similarity matrix for Ausländer shows very clear repetitiveness in bot
 
 
 
-### Rammstein: Exploring Album Acclaim through Spotify Audio Features
+### Rammstein: Exploring Album Acclaim through Spotify Audio Features {data-commentary-width=800}
+
+<div style="max-width:1110px; margin: 0 auto;">
 
 **Rammstein** is a German Neue Deutsche Härte band known for heavy riffs, thought provoking, although controversial, lyrics and flame-fuelled live performances. \
 \
@@ -285,6 +287,11 @@ Thus, in this portfolio, I will investigate whether Spotyfy's Audio Features and
 **Corpus** \
 The corpus consists of released studio albums by **Rammstein** (7 albums, 82 songs), all of which are available on Spotify. In my opinion, the corpus is representative of the whole discography, as the majority of songs are included in the studio albums. The exceptions are *Das Modell* (non-album single, 1997), *Du riechst so gut '98* (which is a version of *Du riechst so gut* (*Herzeleid*, 1995) with a shorter intro) and *Mein Land* (exclusive to compilation album *Made in Germany 1995–2011* (2011)). Live albums are not taken into account, as the (fan-)reviewers usually do not rate live albums. Furthermore, there are no songs exclusive to live albums. \
 \
+
+***
+
+<img src="rushb.jpg" width="100%">
+
 
 
 ### Audio Feature Overview per Album: Distinctive Danceability, Energy, Valence, Loudness and Tempo 
