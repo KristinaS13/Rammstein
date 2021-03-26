@@ -1,7 +1,7 @@
 ---
-title: "Rammstein: Exploring Album Acclaim through Spotify (do not show in class)"
-author: "Kristina Savickaja"
-date: "2/14/2021"
+title: "**Rammstein**: Exploring Album Acclaim through Spotify"
+author: "by Kristina Savickaja"
+date: "03.29.2021"
 output: 
   flexdashboard::flex_dashboard:
     storyboard: true
@@ -35,7 +35,12 @@ library(data.table)
 library(dplyr)
 library(formattable)
 library(tidyr)
+library(shiny)
+library(shinyWidgets)
 ```
+
+Visualization {.storyboard}
+=========================================
 
 ### NEW Which album is this song from? Algorithm is *very* confused by Rammstein
 ```{r}
@@ -70,7 +75,7 @@ Hierarchical clustering algorithm was used to group similar objects together. Ob
 In this method, sum of squares at each number of clusters (in my case, from 2 to 5) are calculated and plotted. Afterwards, by determining the "elbow" (a point at which the slope changes from steep to shallow), the user can determine an optimal number of clusters. This method is not as precise as other, more mathematically-rigorous cluster-validation methods, but seemed to work for the current (small) dataset. \
 Indeed, as can be seen from both the matrix and hierarchical clustering, Sehnsucht and Mutter share more similarities with each other than with Rosenrot, which is grouped with Rammstein. (should I include k-means clustering?) \
 
-### Valence
+### Valence and Energy in Context: **Rammstein** is *Angry*, but also *Happy* and not *Calm* at All
 ```{r}
 knitr::include_graphics("emotions.png")
 ```
@@ -183,6 +188,8 @@ ggplotly(constants_plot)
 *** 
 (tbu)
 
+Introduction {.storyboard}
+=======================================================================
 
 ### (A)Typical Rammstein: Perception vs Computation
 ```{r}
