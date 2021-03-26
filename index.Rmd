@@ -18,6 +18,7 @@ library(statebins)
 library(Rmisc)
 library(ggiraph)
 library(ggplotlyExtra)
+library(RColorBrewer)
 library(plotly)
 library(scales)
 library(lubridate)
@@ -27,7 +28,7 @@ library(viridisLite)
 library(ggiraphExtra)
 library(gridExtra)
 library(flexdashboard)
-library (DiagrammeR)
+library(DiagrammeR)
 ```
 
 ### NEW Which album is this song from? Algorithm is *very* confused by Rammstein
@@ -148,20 +149,19 @@ constants <- read_csv("constant_features.csv")
 
 constants$Album <- factor(constants$Album, levels = c("Herzeleid (1995)", "Sehnsucht (1997)", "Mutter (2001)", "Reise, Reise (2004)", "Rosenrot (2005)", "Liebe ist für alle da (2009)", "Rammstein (2019)"))
 
-constants_plot <- ggplot(data = constants, aes(x = Album, 
-                                               y = Value, 
-                                               group = Feature)) +
+constants_plot <- ggplot(data = constants, aes(x = Album, y = Value, group = Feature)) +
   geom_line(aes(colour = Feature)) +
-  geom_point(aes(color = Feature), 
-             alpha = 0.5, 
-             shape = 23, 
-             size = 2.3) + 
+  geom_point(aes(color = Feature), alpha = 0.5, shape = 23, size = 2) + 
   theme(axis.text.x = element_text(angle = 45),
         axis.line = element_line(colour = "black"),
         panel.grid.minor.x = element_blank(),
         panel.grid.major.x = element_blank(),
         panel.background = element_rect(fill = 'white'),
         panel.grid.major.y = element_line(color = "grey")) +
+  scale_color_manual(name = "Feature", values = c("orangered2", 
+                                                  "salmon4", 
+                                                  "darkgrey", 
+                                                  "darkblue")) +
   ggtitle("Mean Audio Feature Value per Album")
 ggplotly(constants_plot)
 ```
