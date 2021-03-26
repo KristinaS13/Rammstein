@@ -66,7 +66,7 @@ Indeed, as can be seen from both the matrix and hierarchical clustering, Sehnsuc
 
 ### Tempo histogram
 ```{r}
-knitr::include_graphics("tempo histogram.png")
+knitr::include_graphics("tempo density.png")
 ```
 
 ***
