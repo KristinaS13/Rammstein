@@ -11,6 +11,7 @@ output:
 ---
 ```{r setup, include=FALSE}
 library(tidyverse)
+library(rvest)
 library(spotifyr)
 library(fmsb)
 library(ggradar)
@@ -319,6 +320,13 @@ The third tab shows a stacked mode bar chart, where 0 represents Minor mode and 
 
 Conclusion: Mutter, Sehnsucht, Rosenrot are going to be analyzed in-depth based on danceability, energy, valence, loudness and tempo. 
 
+### Take a listen {data-commentary-width=600}
+
+lalalalla whatever this is
+
+***
+
+<iframe src="https://open.spotify.com/embed/playlist/10OqKYDJG7e4fEBZDCzcvw" width="300" height="800" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
 ### Atypical song: Ausländer chroma features
 
