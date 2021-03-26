@@ -70,7 +70,17 @@ knitr::include_graphics("tempo histogram.png")
 ```
 
 ***
-(My computer cannot handle proper tempograms, so I came up with this) Moelants (2002, link tba) showed that there is a certain preferred tempo at around 125 BPM. This natural tempo corresponds with both repeated motor actions and perceived tempo in musical data. As can be seen from the plot, Rammsteins songs mostly fall in 115-140 BPM frame. Interestingly, WEIT WEG does not sound that fast perceptually. This disproportional BPM score might indicate a flaw in the tempo estimation algorithm used by Spotify.
+Moelants (2002, link tba) showed that there is a certain preferred tempo at around 125 BPM. This natural tempo corresponds with both repeated motor actions and perceived tempo in musical data. As can be seen from the plot, Rammsteins songs mostly fall in 115-140 BPM frame. Interestingly, WEIT WEG does not sound that fast perceptually. This disproportional BPM score might indicate a flaw in the tempo estimation algorithm used by Spotify.
+
+### Tempogram Ich will feuer frei
+
+```{r}
+knitr::include_graphics("tempograms.png")
+```
+
+***
+tba
+
 
 ### Plotting popularity
 ```{r}
