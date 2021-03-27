@@ -267,27 +267,35 @@ The self-similarity matrix for Ausländer shows very clear repetitiveness in bot
 
 
 
-### Rammstein: Exploring Album Acclaim through Spotify Audio Features {data-commentary-width=800}
+### `r emo::ji("fire")` `r emo::ji("rock-on")` Why **Rammstein**? Get to know RQs and corpus `r emo::ji("rock-on")` `r emo::ji("fire")` {data-commentary-width=800}
 
 <div style="max-width:1920px; margin: 0 auto;">
 
-**Rammstein** is a German Neue Deutsche Härte band known for heavy riffs, thought provoking, although controversial, lyrics and flame-fuelled live performances. \
+**Rammstein** is a German [Neue Deutsche Härte](https://en.wikipedia.org/wiki/Neue_Deutsche_H%C3%A4rte) band known for heavy riffs, thought-provoking, although controversial, lyrics and flame-fuelled live performances. \
 \
-Almost unanimously, critics and fans alike agree on the worst **Rammstein** album, which is said to be *Rosenrot* (2005). Listeners note that the album is “[…] a disjointed effort glued together with some iron-clad bangers” ([Chillingworth, 2019](https://www.loudersound.com/features/every-rammstein-album-ranked-from-worst-to-best)) and “[…] feels like a thrown-together collection of B-sides (because, essentially, it was)” ([sean_themighty, 2019](https://www.reddit.com/r/Rammstein/comments/ap83rs/anybody_agree/)). \
+Almost unanimously, critics and fans alike agree on the worst **Rammstein** album, which is said to be [*Rosenrot* (2005)](https://open.spotify.com/album/3PrS5X3QNdDUlBIE4bz6J2). Listeners note that the album is “[…] a disjointed effort glued together with some iron-clad bangers” ([Chillingworth, 2019](https://www.loudersound.com/features/every-rammstein-album-ranked-from-worst-to-best)) and “[…] feels like a thrown-together collection of B-sides (because, essentially, it was)” ([sean_themighty, 2019](https://www.reddit.com/r/Rammstein/comments/ap83rs/anybody_agree/)). \
 \
-Interestingly, album rankings oftentimes also agree on the best album – *Mutter* (2001), describing it as “[…] just....legendary” ([JonWood007
-, 2020](https://www.reddit.com/r/Rammstein/comments/gbbs9i/all_rammstein_albums_ranked_from_worst_to_best/)). Furthermore, the album is ranked 324 in *Rock Hard* magazine's book of *The 500 Greatest Rock & Metal Albums of All Time* ([Rock Hard, 2005](https://en.wikipedia.org/wiki/Mutter_(album)#cite_note-11)). Another strong contender for the title of the most loved **Rammstein** album, sometimes tied with *Mutter*, is *Sehnsucht* (1997). The album contains well-known masterpieces, such as *Du hast* and *Engel*. \
+Interestingly, album rankings oftentimes also agree on the best album – [*Mutter* (2001)](https://open.spotify.com/album/2tHCY2fDMi0NqeGZcAxNSc), describing it as “[…] just....legendary” ([JonWood007
+, 2020](https://www.reddit.com/r/Rammstein/comments/gbbs9i/all_rammstein_albums_ranked_from_worst_to_best/)). Furthermore, the album is ranked 324 in *Rock Hard* magazine's book of *The 500 Greatest Rock & Metal Albums of All Time* [Rock Hard, 2005](https://en.wikipedia.org/wiki/Mutter_(album)#cite_note-11). Another strong contender for the title of the most loved **Rammstein** album, sometimes tied with *Mutter*, is [*Sehnsucht* (1997)](https://open.spotify.com/album/2w6Vy8qZLU4niyQAHyu0Ag). The album contains well-known masterpieces, such as *Du hast* and *Engel*. \
 \
 Additionally, **Rammstein** has quite a recognizable sound that is usually attributed to distinctive guitars along with Till Lindemann’s baritone and exaggerated trills (so-called rolled r’s). \
 \
-Thus, in this portfolio, I will investigate whether Spotyfy's Audio Features and Popularity Score can provide insights on the following questions: \
-1. Why *Mutter*/*Sehnsucht* are so well-received, whereas *Rosenrot* is subject to criticism? \
-2. **Rammstein** signature sound: what audio features are constant throughout the discography? \
-3. Typical and atypical **Rammstein**: exploring songs with audio features (computation vs perception). \
+Thus, in this portfolio, I will investigate whether Spotyfy's Audio Features and Popularity Scores can provide insights on the following questions: \
+**1.** Why *Mutter*/*Sehnsucht* are so well-received, whereas *Rosenrot* is subject to criticism? \
+**2.** **Rammstein** signature sound: what audio features are constant throughout the discography? \
+**3.** Typical and atypical **Rammstein**: what audio analyses can say about **Rammstein's**  songs? \
 \
 **Corpus** \
-The corpus consists of released studio albums by **Rammstein** (7 albums, 82 songs), all of which are available on Spotify. In my opinion, the corpus is representative of the whole discography, as the majority of songs are included in the studio albums. The exceptions are *Das Modell* (non-album single, 1997), *Du riechst so gut '98* (which is a version of *Du riechst so gut* (*Herzeleid*, 1995) with a shorter intro) and *Mein Land* (exclusive to compilation album *Made in Germany 1995–2011* (2011)). Live albums are not taken into account, as the (fan-)reviewers usually do not rate live albums. Furthermore, there are no songs exclusive to live albums. \
+The corpus consists of released studio albums by **Rammstein** (7 albums, 82 songs), all of which are available on Spotify: \
+- [Herzeleid (1995)](https://open.spotify.com/album/2AXNbmgbX2i21Niol6eYul?si=777b4385f2804971) \
+- [*Sehnsucht* (1997)](https://open.spotify.com/album/2w6Vy8qZLU4niyQAHyu0Ag) \
+- [*Mutter* (2001)](https://open.spotify.com/album/2tHCY2fDMi0NqeGZcAxNSc) \
+- [Reise, Reise (2004)](https://open.spotify.com/track/6bvTzuFABmFnAAmVZ3nlMh?si=6c0a34167652445a) \
+- [Rosenrot (2005)](https://open.spotify.com/album/3PrS5X3QNdDUlBIE4bz6J2) \
+- [Liebe ist für alle da (2009)](https://open.spotify.com/album/29J0MchD0OWNeiMNbPDwfa?si=4005f993c4f74d90) \
+- [Untitled (2019)](https://open.spotify.com/album/1LoyJQVHPLHE3fCCS8Juek?si=FnvCowknROKrf1BzXMerBQ) \
 \
+Click through the tabs to find out more!
 
 ***
 
