@@ -301,7 +301,7 @@ Click through the tabs to find out more!
 
 <img src="rushb.jpg" width="100%">
 
-### Audio Feature overview per album 1: **keys** vary, **mode** is major
+### Audio Feature overview per album 1: **keys** vary, **mode** is major {data-commentary-width=500}
 
 ```{r out.width = "700px"}
 knitr::include_graphics("key histograms.png")
@@ -314,11 +314,11 @@ To potentially pinpoint the differences that might have contributed to *Mutter*/
 \
 The first histogram highlights the **key distribution per album**. Every Rammstein album has notable variation in keys, averaging at 7 keys per album. *Mutter* seems to be an outlier, with only 4 keys implemented, mainly D, E♭, E and A. Overall, **no clear key preference** can be seen throughout the discography. \
 \
-Second plot is a stacked mode bar chart that **illustrates minor/major modes in the corpus**. As can be seen, **major mode is preferred throughout all albums**. This might be a shocker for some, as Rammstein’s music does not sound necessarily *positive*, which only further demonstrates that *major ≠ happy* and *minor ≠ sad*.
+Second plot is a stacked bar chart that **illustrates minor/major modes in the corpus**. As can be seen, **major mode is preferred throughout all albums**. This might be a shocker for some, as Rammstein’s music does not sound necessarily *positive*, which only further demonstrates that *major ≠ happy* and *minor ≠ sad*.
 
-### Audio Feature Overview per album 2: distinctive **Danceability**, **Energy**, **Valence**, **Loudness** and **Tempo**
+### Audio Feature Overview per album 2: distinctive **danceability**, **energy**, **valence**, **loudness** and **tempo**
 
-```{r}
+```{r out.width = "700px"}
 knitr::include_graphics("geom_density album summary.png")
 ```
 
