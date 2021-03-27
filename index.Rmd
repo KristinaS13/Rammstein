@@ -335,7 +335,7 @@ Next, **valence** plot marks ***Rosenrot* as a clear outlier**. Low valence corr
 \
 Another interesting visualization is **loudness**. Both ***Rosenrot* and *Sehnsucht* exhibit a strong peak at -5**. Although ***Mutter’s*** highest density shares the same value, the **peak is weak**. \
 \
-Finally, regarding **tempo**, ***Rosenrot* has more songs in 160 (BPM)** tempo range than other albums. \
+Finally, regarding **tempo**, ***Rosenrot* has more songs in 160 BPM** tempo range than other albums. \
 \
 **Speechiness**, **liveness**, **acousticness** and **instrumentalness** do not seem to provide any interesting patterns regarding the three albums in question and also overall. \
 \
