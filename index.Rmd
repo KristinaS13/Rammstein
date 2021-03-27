@@ -76,14 +76,27 @@ Hierarchical clustering algorithm was used to group similar objects together. Ob
 In this method, sum of squares at each number of clusters (in my case, from 2 to 5) are calculated and plotted. Afterwards, by determining the "elbow" (a point at which the slope changes from steep to shallow), the user can determine an optimal number of clusters. This method is not as precise as other, more mathematically-rigorous cluster-validation methods, but seemed to work for the current (small) dataset. \
 Indeed, as can be seen from both the matrix and hierarchical clustering, Sehnsucht and Mutter share more similarities with each other than with Rosenrot, which is grouped with Rammstein. (should I include k-means clustering?) \
 
-### Valence and Energy in Context: **Rammstein** is *Angry*, but also *Happy* and not *Calm* at All
+### **Valence** and **Energy** in context: **Rammstein** is *angry*, but also *happy* and not *calm* at all {data-commentary-width=500}
 ```{r}
 knitr::include_graphics("emotions.png")
 ```
 
 ***
-(tba)
-
+Spotify's Audio Features sometimes might seem a bit isolated from the real world. **Valence** is said to be ["a measure describing the musical positiveness conveyed by a track"](https://developer.spotify.com/documentation/web-api/reference/#object-audiofeaturesobject). The higher the valence score, the more positive, happy and cheerful the song sounds. **Energy** is labelled as ["perceptual measure of intensity and activity"](https://developer.spotify.com/documentation/web-api/reference/#object-audiofeaturesobject). Tracks with high energy are typically fast, loud and noisy. \
+\
+But how **perceptually sound** these measures *really* are?\
+\
+To tackle this question, I decided to look at the corpus in the context of **[valence-arousal model of emotion (circumplex model)](https://content.apa.org/record/1981-25062-001)**. In this model, emotions are distributed in a 2D circular space. The dimensions are arousal (Spotify's energy) and valence. The combinations of these features result in 4 emotion quadrants - **calm**, **happy**, **sad** or **angry**. Placing Rammstein's songs in this model can provide us with an overview of the emotions that their music evokes. \
+\
+The results of the classification are quite fascinating. Firstly, Rammstein has **no calm** songs, as the quadrant is absolutely empty. This is not unexpected, as Rammstein has only few ballads and those are in the *calm* category. The songs that are the closest to being *calm* are *[Los](https://open.spotify.com/track/679Tyyun9r41BvpDOTAAOo?autoplay=true)* and *[Laichzeit](https://open.spotify.com/track/7BQWcPnFAlkPVxJQAf20aq?autoplay=true)*. Perceptually, these two tracks might sound more monotone compared to others in *happy*, which places them lower on the energy scale, but they are still loud and fast. It is also a bizarre and grim experience seeing a song about incest and bestiality (Laichzeit) in the *happy* category...\
+\
+Secondly, the **happiest songs are [Bestrafe mich](https://open.spotify.com/track/5QueZSIpWUbH4nLZlkjjkP?si=108dc6646b134604) and [Eifersucht](https://open.spotify.com/track/2R5Zsb2TtsjHAEJFUZvf7v?si=00d5442604b84d03)**. Please take a listen and judge yourself whether these songs sound happy! I would guess that they do not. To me, [Ausländer](https://open.spotify.com/track/7j43FohbLVulScL7S9sQZk?si=3fbfb78e83f04eb8) is the happiest track out of the whole discography, but it is in the *angry* quadrant. These misalignments might indicate that Spotify's **features do not directly correspond to arousal and valence of the circumplex model**. \
+\
+The **angriest song is [Rammlied](https://open.spotify.com/track/2BQFnSQymvASqEMIrwe7tp?si=16cb452cbf3c4fa9)**, which I agree with. This powerful album opening song has an apocalyptic vibe to it, with pronounced guitar riffs and devilish Till's vocals juxtaposed with church choir in the background. This is a grandstanding song that just sounds *powerful and furious*. \
+\
+Unsurprisingly, **[Ein Lied](https://open.spotify.com/track/4L4oCtdmqjxS8AjkzjLGDQ) is the most unhappy song**. Ein Lied is one of their slowest songs, with acoustic guitars, ethereal synthesizers and theremin-like keyboards being the focus of the song's instrumental. The percussion is completely absent from this song. The vocal line is soft, partly spoken, partly sung using low breathy tones, which is atypical of Rammstein. \
+\
+Overall, **the majority of songs are in the *angry* category and none in *calm***, which, in my opinion, aligns with the public's perception of Rammstein and metal music in general. No specific trends per album can be seen. 
 
 ### **Rammstein's** *preferred tempo*: does it align with Moelants'? {data-commentary-width=330}
 ```{r}
@@ -298,7 +311,7 @@ The corpus consists of released studio albums by **Rammstein** (7 albums, 82 son
 - [Reise, Reise (2004)](https://open.spotify.com/track/6bvTzuFABmFnAAmVZ3nlMh?si=6c0a34167652445a) \
 - [Rosenrot (2005)](https://open.spotify.com/album/3PrS5X3QNdDUlBIE4bz6J2) \
 - [Liebe ist für alle da (2009)](https://open.spotify.com/album/29J0MchD0OWNeiMNbPDwfa?si=4005f993c4f74d90) \
-- [Untitled (2019)](https://open.spotify.com/album/1LoyJQVHPLHE3fCCS8Juek?si=FnvCowknROKrf1BzXMerBQ) \
+- [Untitled (or Rammstein) (2019)](https://open.spotify.com/album/1LoyJQVHPLHE3fCCS8Juek?si=FnvCowknROKrf1BzXMerBQ) \
 \
 Click through the tabs to find out more!
 
