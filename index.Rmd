@@ -318,7 +318,7 @@ Second plot is a stacked bar chart that **illustrates minor/major modes in the c
 
 ### Audio Feature Overview per album 2: distinctive **danceability**, **energy**, **valence**, **loudness** and **tempo** {data-commentary-width=500}
 
-```{r out.width = "700px"}
+```{r out.width = "800px"}
 knitr::include_graphics("geom_density album summary.png")
 ```
 
@@ -326,7 +326,7 @@ knitr::include_graphics("geom_density album summary.png")
 
 On the left, **density plots of Spotify Audio Features for Rammstein’s studio albums** are presented. Density plots show smoothed distribution of values and the peaks correspond to locations where there is the highest concentration of said values.\
 \
-**Danceability** seems to vary per album. It is clear that *Sehnsucht* (and *Herzeleid*) have **the highest overall danceability**. Conversely, the majority of songs from *Rosenrot* are located **lower on the danceability scale**. \
+**Danceability** seems to vary per album. It is clear that ***Sehnsucht*** (and *Herzeleid*) have **the highest overall danceability**. Conversely, the majority of songs from ***Rosenrot*** are located **lower on the danceability scale**. \
 Interestingly, danceability is one of the most mysterious Spotify’s Audio Features, as the listener’s perception of danceability for a song sometimes conflicts with the value awarded by Spotify. For instance, [Du Riechst So Gut](https://open.spotify.com/track/73se54LukI1xEPE8XKsrWf) has a danceability score of 0.67/1, whereas [I'm Looking Forward to Joining You, Finally (Nine Inch Nails)](https://open.spotify.com/track/7hZ59R6Kg7oV5WEmpPFC64?si=b52b2a9a37b24296) was awarded with a striking score of 0.795/1.\
 \
 **Energy** distribution per album shows that overall, Rammstein’s discography boasts high energy. ***Sehnsucht’s* energy is concentrated at around 0.95**, while ***Rosenrot’s* energy peak is seen at 0.7**. \
