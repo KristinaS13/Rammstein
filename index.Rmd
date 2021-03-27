@@ -316,7 +316,7 @@ The first histogram highlights the **key distribution per album**. Every Rammste
 \
 Second plot is a stacked bar chart that **illustrates minor/major modes in the corpus**. As can be seen, **major mode is preferred throughout all albums**. This might be a shocker for some, as Rammstein’s music does not sound necessarily *positive*, which only further demonstrates that *major ≠ happy* and *minor ≠ sad*.
 
-### Audio Feature Overview per album 2: distinctive **danceability**, **energy**, **valence**, **loudness** and **tempo**
+### Audio Feature Overview per album 2: distinctive **danceability**, **energy**, **valence**, **loudness** and **tempo** {data-commentary-width=500}
 
 ```{r out.width = "700px"}
 knitr::include_graphics("geom_density album summary.png")
@@ -324,17 +324,22 @@ knitr::include_graphics("geom_density album summary.png")
 
 ***
 
-(TBU: tabs, improve conclusion, add more "high valence = positive explanations", other features - for Q3)
-
-On the left, density plots of Spotify audio features for Rammstein’s studio albums are presented. 
-Danceability seems to vary per album. It is clear that Sehnsucht (and Herzeleid) have the highest overall danceability. Conversely, the majority of songs from Rosenrot are located lower on the danceability scale. Furthermore, danceability is one of the most mysterious Spotify’s audio features, as the listener’s perception of danceability for a song sometimes conflicts with the value awarded by Spotify. For instance, Du Riechst So Gut has a danceability score of 0.67, whereas I'm Looking Forward to Joining You, Finally (Nine Inch Nails) was awarded with a striking score of 0.795.
-Energy distribution per album shows that overall, Rammstein’s discography boasts high energy. Sehnsucht’s energy is concentrated at around 0.95, while Rosenrot’s energy peak is seen at 0.7.
-Next, valence plot illustrates Rosenrot as a clear outlier. 
-Another interesting visualization is loudness. Both Rosenrot and Sehnsucht exhibit a strong peak at -5. Although Mutter’s highest density shares the same value, the peak is weak.
-Finally, regarding tempo, Rosenrot has more songs in 160 (BPM) tempo range than other albums. 
-
-
-Conclusion: Mutter, Sehnsucht, Rosenrot are going to be analyzed in-depth based on danceability, energy, valence, loudness and tempo. 
+On the left, **density plots of Spotify Audio Features for Rammstein’s studio albums** are presented. Density plots show smoothed distribution of values and the peaks correspond to locations where there is the highest concentration of said values.\
+\
+**Danceability** seems to vary per album. It is clear that *Sehnsucht* (and *Herzeleid*) have **the highest overall danceability**. Conversely, the majority of songs from *Rosenrot* are located **lower on the danceability scale**. \
+Interestingly, danceability is one of the most mysterious Spotify’s Audio Features, as the listener’s perception of danceability for a song sometimes conflicts with the value awarded by Spotify. For instance, [Du Riechst So Gut](https://open.spotify.com/track/73se54LukI1xEPE8XKsrWf) has a danceability score of 0.67/1, whereas [I'm Looking Forward to Joining You, Finally (Nine Inch Nails)](https://open.spotify.com/track/7hZ59R6Kg7oV5WEmpPFC64?si=b52b2a9a37b24296) was awarded with a striking score of 0.795/1.\
+\
+**Energy** distribution per album shows that overall, Rammstein’s discography boasts high energy. ***Sehnsucht’s* energy is concentrated at around 0.95**, while ***Rosenrot’s* energy peak is seen at 0.7**. \
+\
+Next, **valence** plot marks ***Rosenrot* as a clear outlier**. Low valence corresponds to more sad, angry music.\
+\
+Another interesting visualization is **loudness**. Both ***Rosenrot* and *Sehnsucht* exhibit a strong peak at -5**. Although ***Mutter’s*** highest density shares the same value, the **peak is weak**. \
+\
+Finally, regarding **tempo**, ***Rosenrot* has more songs in 160 (BPM)** tempo range than other albums. \
+\
+**Speechiness**, **liveness**, **acousticness** and **instrumentalness** do not seem to provide any interesting patterns regarding the three albums in question and also overall. \
+\
+**Conclusion:** *Mutter*, *Sehnsucht*, *Rosenrot* are going to be analyzed in-depth based on **danceability**, **energy**, **valence**, **loudness** and **tempo**, as these features differ per album.
 
 
 ### No clue how **Rammstein** sounds? Take a listen! {data-commentary-width=600}
