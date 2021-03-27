@@ -327,12 +327,14 @@ The third tab shows a stacked mode bar chart, where 0 represents Minor mode and 
 
 Conclusion: Mutter, Sehnsucht, Rosenrot are going to be analyzed in-depth based on danceability, energy, valence, loudness and tempo. 
 
-### Take a listen {data-commentary-width=600}
 
-lalalalla whatever this is
+### No clue how **Rammstein** sounds? Take a listen! {data-commentary-width=600}
+
+For those who are unfamiliar with the band, I have compiled a short (10 song) playlist with my favourite songs. Listen to "RAMMSTEIN: Beyond Du Hast" playlist here →
 
 ***
-lalalalalla
+ADD AT THE END
+<iframe src="https://open.spotify.com/embed/playlist/65oczv23Ru6JUSSgLdCnwe" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
 
 ### Atypical song: Ausländer chroma features
