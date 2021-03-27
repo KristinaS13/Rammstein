@@ -1,5 +1,5 @@
 ---
-title: "**Rammstein**: Exploring Album Acclaim through Spotify"
+title: "Rammstein: Exploring Album Acclaim through Spotify"
 author: "by Kristina Savickaja"
 date: "03.29.2021"
 output: 
@@ -269,18 +269,7 @@ The self-similarity matrix for Ausländer shows very clear repetitiveness in bot
 
 ### Rammstein: Exploring Album Acclaim through Spotify Audio Features {data-commentary-width=800}
 
-Column
--------------------------------------
-
-### Selected songs  {.no-padding}
-```{r}
-valueBox (15, icon ="ion-music-note", color = "primary")
-```
-
 <div style="max-width:1920px; margin: 0 auto;">
-
-Column
-------------------------------------
 
 **Rammstein** is a German Neue Deutsche Härte band known for heavy riffs, thought provoking, although controversial, lyrics and flame-fuelled live performances. \
 \
