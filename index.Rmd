@@ -43,25 +43,31 @@ library(shinyWidgets)
 Visualization {.storyboard}
 =========================================
 
-### NEW Which album is this song from? Algorithm is *very* confused by Rammstein
+### Which album is this song from? Algorithm is *baffled* by Rammstein {data-commentary-width=550}
 ```{r}
 knitr::include_graphics("all features prediction.png")
 ```
 
 ***
-k-Nearest Neighbour (k-NN) classification algorithm has been applied to the dataset in order to classify the songs into albums using computational methods. Unfortunately, k-NN performs poorly on the present dataset. The best obtained score is 5/11 songs correctly classified, that is for Herzeleid. Precision and recall scores, summarized below, indicate an abundance of both false negatives and false positives. For instance, for RAMMSTEIN album, both precision and recall are 0. Low recall means that songs from a particular album are not categorized into the same album by the algorithm. Low precision means that the algorithm also thinks that a lot of songs from other albums belong to an album in question. The only acceptable scores are for Herzeleid, although recall is still quite poor.
+**k-Nearest Neighbour (k-NN) classification algorithm** has been applied to the dataset in order to classify the songs into albums using computational methods. If the predictions are accurate, we can infer that albums significantly differ from each other, which would further aid my *Mutter/Sehnsucht* vs *Rosenrot* debate. \
+\
+Unfortunately, k-NN performs poorly on Rammstein's discography. The **best obtained score is 5/11 songs correctly classified**, that is for *Herzeleid*. Precision and recall scores, summarized below, indicate an abundance of both false negatives and false positives. For instance, for *RAMMSTEIN* album, both precision and recall are 0. \
+\
+**Low recall** means that songs from a particular album are not categorized into the same album by the algorithm. **Low precision** means that the algorithm also thinks that a lot of songs from other albums belong to an album in question. The only acceptable scores are for *Herzeleid*, although recall is still quite poor. \
+\
+**Album (Precision, Recall)**: \
+- Herzeleid (0.7142857, 0.4545455) \
+- LIEBE IST FÜR ALLE DA (0.2500000, 0.1875000) \
+- Mutter (0.1428571, 0.1818182) \
+- RAMMSTEIN (0.0000000, 0.0000000) \
+- Reise, Reise (0.2000000, 0.1818182) \
+- ROSENROT (0.2307692, 0.2727273) \
+- Sehnsucht (0.2500000; 0.2727273) \
+\
+Choosing top predictors (loudness, c12, c04) and features used for previous analyses (danceability, energy, valence, loudness and tempo) did not majorly improve things. \
+\
+**Training a classifier using so many categories (Audio Features, timbre components), whilst having a small corpus (82 songs) will most probably lead to poor performance, as the variability is extremely high. No definite conclusions can be drawn from k-NN results. **
 
-| Album                 | Precision | Recall    |
-|-----------------------|-----------|-----------|
-| Herzeleid             | 0.7142857 | 0.4545455 |
-| LIEBE IST FÜR ALLE DA | 0.2500000 | 0.1875000 |
-| Mutter                | 0.1428571 | 0.1818182 | 
-| RAMMSTEIN             | 0.0000000 | 0.0000000 |
-| Reise, Reise          | 0.2000000 | 0.1818182 |
-| ROSENROT              | 0.2307692 | 0.2727273 |
-| Sehnsucht             | 0.2500000 | 0.2727273 |
-
-Choosing top predictors (loudness, c12, c04) and features used for previous analyses (danceability, energy, valence, loudness and tempo) did not majorly improve things (should I add another table with precisions and recalls for these? The values for both are also awful)
 
 ### NEW K-means and Clustering: Sehnsucht & Mutter are Neighbours, Rosenrot is their Distant Friend
 ```{r}
@@ -305,13 +311,13 @@ Thus, in this portfolio, I will investigate whether Spotyfy's Audio Features and
 \
 **Corpus** \
 The corpus consists of released studio albums by **Rammstein** (7 albums, 82 songs), all of which are available on Spotify: \
-- [Herzeleid (1995)](https://open.spotify.com/album/2AXNbmgbX2i21Niol6eYul?si=777b4385f2804971) \
+- [*Herzeleid* (1995)](https://open.spotify.com/album/2AXNbmgbX2i21Niol6eYul?si=777b4385f2804971) \
 - [*Sehnsucht* (1997)](https://open.spotify.com/album/2w6Vy8qZLU4niyQAHyu0Ag) \
 - [*Mutter* (2001)](https://open.spotify.com/album/2tHCY2fDMi0NqeGZcAxNSc) \
-- [Reise, Reise (2004)](https://open.spotify.com/track/6bvTzuFABmFnAAmVZ3nlMh?si=6c0a34167652445a) \
-- [Rosenrot (2005)](https://open.spotify.com/album/3PrS5X3QNdDUlBIE4bz6J2) \
-- [Liebe ist für alle da (2009)](https://open.spotify.com/album/29J0MchD0OWNeiMNbPDwfa?si=4005f993c4f74d90) \
-- [Untitled (or Rammstein) (2019)](https://open.spotify.com/album/1LoyJQVHPLHE3fCCS8Juek?si=FnvCowknROKrf1BzXMerBQ) \
+- [*Reise, Reise* (2004)](https://open.spotify.com/track/6bvTzuFABmFnAAmVZ3nlMh?si=6c0a34167652445a) \
+- [*Rosenrot* (2005)](https://open.spotify.com/album/3PrS5X3QNdDUlBIE4bz6J2) \
+- [*Liebe ist für alle da* (2009)](https://open.spotify.com/album/29J0MchD0OWNeiMNbPDwfa?si=4005f993c4f74d90) \
+- [*Untitled* (or RAMMSTEIN) (2019)](https://open.spotify.com/album/1LoyJQVHPLHE3fCCS8Juek?si=FnvCowknROKrf1BzXMerBQ) \
 \
 Click through the tabs to find out more!
 
