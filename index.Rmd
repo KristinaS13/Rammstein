@@ -301,12 +301,25 @@ Click through the tabs to find out more!
 
 <img src="rushb.jpg" width="100%">
 
+### Audio Feature overview per album 1: **keys** vary, **mode** is major
 
-### Audio Feature Overview per Album: Distinctive Danceability, Energy, Valence, Loudness and Tempo
-```{r}
-knitr::include_graphics("geom_density album summary.png")
+```{r out.width = "700px"}
 knitr::include_graphics("key histograms.png")
 knitr::include_graphics("mode.png")
+```
+
+***
+
+To potentially pinpoint the differences that might have contributed to *Mutter*/*Sehnsucht* love and *Rosenrot* hate, it is useful to take a close-up look at Spotify's Audio Features. Furthermore, Audio Features were plotted to see which elements change or stay constant throughout the discography. \
+\
+The first histogram highlights the **key distribution per album**. Every Rammstein album has notable variation in keys, averaging at 7 keys per album. *Mutter* seems to be an outlier, with only 4 keys implemented, mainly D, E♭, E and A. Overall, **no clear key preference** can be seen throughout the discography. \
+\
+Second plot is a stacked mode bar chart that **illustrates minor/major modes in the corpus**. As can be seen, **major mode is preferred throughout all albums**. This might be a shocker for some, as Rammstein’s music does not sound necessarily *positive*, which only further demonstrates that *major ≠ happy* and *minor ≠ sad*.
+
+### Audio Feature Overview per album 2: distinctive **Danceability**, **Energy**, **Valence**, **Loudness** and **Tempo**
+
+```{r}
+knitr::include_graphics("geom_density album summary.png")
 ```
 
 ***
@@ -320,10 +333,6 @@ Next, valence plot illustrates Rosenrot as a clear outlier.
 Another interesting visualization is loudness. Both Rosenrot and Sehnsucht exhibit a strong peak at -5. Although Mutter’s highest density shares the same value, the peak is weak.
 Finally, regarding tempo, Rosenrot has more songs in 160 (BPM) tempo range than other albums. 
 
-Second tab highlights the key distribution per album. Spotify uses standard Pitch class notation, so the key values range from 0 (C) to 11 (B). Every Rammstein album has notable variation in keys, averaging at 7 keys per album. Mutter seems to be an outlier, with only 4 keys implemented, mainly 2 (D), 3 (D♯/E♭), 4 (E) and 9 (A). Overall, no clear key preference can be seen throughout the discography.
-
-
-The third tab shows a stacked mode bar chart, where 0 represents Minor mode and 1 corresponds to Major mode. As can be seen, major mode is preferred throughout all albums. This might be a shocker for some, as Rammstein’s music does not sound necessarily positive, which only further demonstrates that major ≠ happy and minor ≠ sad.
 
 Conclusion: Mutter, Sehnsucht, Rosenrot are going to be analyzed in-depth based on danceability, energy, valence, loudness and tempo. 
 
