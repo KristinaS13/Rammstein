@@ -83,7 +83,7 @@ I have decided to use an unsupervised learning algorithm made to tackle clusteri
 To begin with, I wanted to know whether it is *sensible* to conduct these analyses at all. I generated a **distance matrix** to see if there are any preliminary clustering trends.
 I decided to focus on the features that were determined to be potentially characteristic after analyzing the density plots in previous tabs. The **distance matrix** on the left based on danceability, energy, valence, loudness and tempo shows the Euclidean distance between album pairs. The closer to 0 (black colour), the less distance, thus the more similar are albums. There is a black diagonal line that indicates that albums are identical, that is distance = 0, because we are comparing an album to itself. \
 \
-The matrix shows that *Rosenrot* seems to be similar to *RAMMSTEIN*, whereas *Sehnsucht* is quite different from every other album. Sounds promising! \
+The matrix shows that *Rosenrot* seems to be similar to *RAMMSTEIN*, whereas *Sehnsucht* is quite different from every other album. Looks promising! \
 \
 The results of the hierarchical k-means can be seen in the second plot. The algorithm grouped similar objects together. Objects within each cluster are more similar to each other than to those outside the cluster. \
 \
@@ -226,7 +226,7 @@ ggplotly(constants_plot)
 Introduction {.storyboard}
 =======================================================================
 
-### (A)Typical Rammstein: perception and computation FIX
+### (A)Typical Rammstein: perception and computation {data-commentary-width=450}
 ```{r}
 heatmap_data <- read_csv(file = "heatmap_test.csv")
 heatmap_data[, 3] <- round(heatmap_data[, 3], digits = 3)
@@ -254,18 +254,8 @@ heatmap_table <- ggplot(heatmap_data, aes(x = Feature,
 
 ggplotly(heatmap_table)
 ```
-
-***
-
-For detailed, low-level audio analysis, typical and atypical songs have to be established. What songs would make you exclaim “yes, of course this is Rammstein”? Personally, I chose Du Hast and Ich will. Of course, this approach is highly subjective and influenced by a plethora of external reasons, such as track popularity, familiarity with the artist, individual biases and tastes. To expand the notion of “typical” to include not only my personal judgements, but also those of a potentially impartial algorithm, standardizes z-scores based on all audio features were computed. The songs that scored nearest to 0, mainly Feuer Frei! and Hallomann were chosen as representatives. 
-
-The same approach was taken when selecting atypical songs. In my opinion, Te Quiero Puta! may be the most un-Rammstein song they have ever released. In the context of all their other recordings, this metal-meets-mariachi song sounds novel. Another unique track is Ausländer. It sounds so catchy and pop-y, that it might have been a successful (rock)club song. Unsurprisingly, z-scores indicated that Ein Lied and Roter Sand – Orchester Version differ from the rest of the corpus. 
-
-Summary: typical songs - Feuer Frei!, Hallomann, Ich will, Du Hast; atypical songs – Ein Lied, Roter Sand – Orchester Version, Te Quiero Puta!, Ausländer.
-ADD PLAYLIST, HOW DECIDED ATYPICAL
- 
-
-### FIX
+\
+\
 ```{r}
 table_typatyp <- read_csv(file = "other_features.csv")
 
@@ -275,6 +265,21 @@ table_ta <- formattable(table_typatyp,
                  'Tempo' = color_tile("#f0c7c7", "#db0707")))
 table_ta
 ```
+
+***
+
+For detailed, low-level audio analysis, typical and atypical songs have to be established.
+\
+What songs would make you exclaim “yes, of course this is Rammstein!”? Personally, I chose **Du hast** and **Ich will**. Of course, this approach is *highly subjective* and influenced by a plethora of external reasons, such as *track popularity*, *familiarity with the artist*, *individual biases* and *tastes*. To expand the notion of “typical” to include not only my personal judgements, but also those of a potentially impartial algorithm, **standardizes z-scores** based on all audio features were computed. The songs that scored nearest to 0, mainly **Feuer Frei!** and **Hallomann** were chosen as representatives. \
+\
+The same approach was taken when selecting atypical songs. In my opinion, **Te Quiero Puta!** may be the most *un-Rammstein* song they have ever released. In the context of all their other recordings, this *metal-meets-mariachi* song sounds novel. Another unique track is **Ausländer**. It sounds so *catchy and pop-y*, that it might have been a successful (rock)club song. Unsurprisingly, z-scores (z > 2) indicated that **Ein Lied** and **Roter Sand – Orchester Version** differ from the rest of the corpus, as these are Rammstein's ballads. \
+\
+**Summary:** \
+- **typical songs** - Feuer Frei!, Hallomann, Ich will, Du Hast; \
+- **atypical songs** – Ein Lied, Roter Sand – Orchester Version, Te Quiero Puta!, Ausländer. \
+\
+The Spotify Audio Features per song are presented in an interactive heat table on the left. Additionally, I compiled a playlist of typical/atypical songs! ↓
+ADD PLAYLIST!!!!!!!!!!!!!!!!!!!!
 
 ### FIX
 
@@ -309,7 +314,7 @@ The self-similarity matrix for Ausländer shows very clear repetitiveness in bot
 Almost unanimously, critics and fans alike agree on the worst **Rammstein** album, which is said to be [*Rosenrot* (2005)](https://open.spotify.com/album/3PrS5X3QNdDUlBIE4bz6J2). Listeners note that the album is “[…] a disjointed effort glued together with some iron-clad bangers” ([Chillingworth, 2019](https://www.loudersound.com/features/every-rammstein-album-ranked-from-worst-to-best)) and “[…] feels like a thrown-together collection of B-sides (because, essentially, it was)” ([sean_themighty, 2019](https://www.reddit.com/r/Rammstein/comments/ap83rs/anybody_agree/)). \
 \
 Interestingly, album rankings oftentimes also agree on the best album – [*Mutter* (2001)](https://open.spotify.com/album/2tHCY2fDMi0NqeGZcAxNSc), describing it as “[…] just....legendary” ([JonWood007
-, 2020](https://www.reddit.com/r/Rammstein/comments/gbbs9i/all_rammstein_albums_ranked_from_worst_to_best/)). Furthermore, the album is ranked 324 in *Rock Hard* magazine's book of *The 500 Greatest Rock & Metal Albums of All Time* [Rock Hard, 2005](https://en.wikipedia.org/wiki/Mutter_(album)#cite_note-11). Another strong contender for the title of the most loved **Rammstein** album, sometimes tied with *Mutter*, is [*Sehnsucht* (1997)](https://open.spotify.com/album/2w6Vy8qZLU4niyQAHyu0Ag). The album contains well-known masterpieces, such as *Du hast* and *Engel*. \
+, 2020](https://www.reddit.com/r/Rammstein/comments/gbbs9i/all_rammstein_albums_ranked_from_worst_to_best/)). Furthermore, the album is ranked 324 in *Rock Hard* magazine's book of *The 500 Greatest Rock & Metal Albums of All Time* [(Rock Hard, 2005)](https://en.wikipedia.org/wiki/Mutter_(album)#cite_note-11). Another strong contender for the title of the most loved **Rammstein** album, sometimes tied with *Mutter*, is [*Sehnsucht* (1997)](https://open.spotify.com/album/2w6Vy8qZLU4niyQAHyu0Ag). The album contains well-known masterpieces, such as *Du hast* and *Engel*. \
 \
 Additionally, **Rammstein** has quite a recognizable sound that is usually attributed to distinctive guitars along with Till Lindemann’s baritone and exaggerated trills (so-called rolled r’s). \
 \
