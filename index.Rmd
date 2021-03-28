@@ -69,18 +69,28 @@ Choosing top predictors (loudness, c12, c04) and features used for previous anal
 **Training a classifier using so many categories (Audio Features, timbre components), whilst having a small corpus (82 songs) will most probably lead to poor performance, as the variability is extremely high. No definite conclusions can be drawn from k-NN results. **
 
 
-### NEW K-means and Clustering: Sehnsucht & Mutter are Neighbours, Rosenrot is their Distant Friend
-```{r}
+### **Hierarchical k-Means clustering**: Sehnsucht & Mutter are Neighbours, Rosenrot is their Distant Friend {data-commentary-width=500}
+```{r out.width = "700px"}
 knitr::include_graphics("Distance matrix for albums1.png")
 knitr::include_graphics("Hierarchical clustering.png")
 ```
 
 ***
-K-NN is a supervised learning algorithm that is useful for classification and regression problems. As was seen from the knn analysis, the performance is poor. So, I have decided to use an unsupervised learning algorithm made to tackle clustering problems, that is k-means. Here, I have tried to group the albums into bigger clusters, which would show which albums are similar and which are different. The distance matrix based on danceability, energy, valence, loudness and tempo shows the distance between album pairs. The closer to 0 (black colour), the less distance, thus the more similar are albums. There is a black diagonal line that indicates that albums are identical, that is distance = 0, because we are comparing an album to itself. \
-
-Hierarchical clustering algorithm was used to group similar objects together. Objects within each cluster are similar to each other. The amount of clusters (3) was chosen after applying the "Elbow" method. 
-In this method, sum of squares at each number of clusters (in my case, from 2 to 5) are calculated and plotted. Afterwards, by determining the "elbow" (a point at which the slope changes from steep to shallow), the user can determine an optimal number of clusters. This method is not as precise as other, more mathematically-rigorous cluster-validation methods, but seemed to work for the current (small) dataset. \
-Indeed, as can be seen from both the matrix and hierarchical clustering, Sehnsucht and Mutter share more similarities with each other than with Rosenrot, which is grouped with Rammstein. (should I include k-means clustering?) \
+K-NN is a supervised learning algorithm that is useful for classification and regression problems. As was seen from the previous tab, the performance is lacking. \
+\
+I have decided to use an unsupervised learning algorithm made to tackle clustering problems, that is **hierarchical k-means**. \
+\
+To begin with, I wanted to know whether it is *sensible* to conduct these analyses at all. I generated a **distance matrix** to see if there are any preliminary clustering trends.
+I decided to focus on the features that were determined to be potentially characteristic after analyzing the density plots in previous tabs. The **distance matrix** on the left based on danceability, energy, valence, loudness and tempo shows the Euclidean distance between album pairs. The closer to 0 (black colour), the less distance, thus the more similar are albums. There is a black diagonal line that indicates that albums are identical, that is distance = 0, because we are comparing an album to itself. \
+\
+The matrix shows that *Rosenrot* seems to be similar to *RAMMSTEIN*, whereas *Sehnsucht* is quite different from every other album. Sounds promising! \
+\
+The results of the hierarchical k-means can be seen in the second plot. The algorithm grouped similar objects together. Objects within each cluster are more similar to each other than to those outside the cluster. \
+\
+The amount of clusters (3) was chosen after applying the [elbow method](https://en.wikipedia.org/wiki/Elbow_method_(clustering)). 
+In this method, sum of squares at each number of clusters (in my case, from 2 to 5) are calculated and plotted. Afterwards, by determining the "elbow" (a point at which the slope changes from steep to shallow), the user can determine an optimal number of clusters. This method is not as precise as other, more mathematically-rigorous cluster validation methods, but seemed to work for the current (small) dataset. \
+\
+Indeed, as can be seen from both the distance matrix and hierarchical k-means clustering, **Sehnsucht and Mutter share more similarities with each other than with Rosenrot**, which is grouped with Rammstein, which **supports the idea that Rosenrot is somehow different from Mutter and Sehnsucht**. \
 
 ### **Valence** and **Energy** in context: **Rammstein** is *angry*, but also *happy* and not *calm* at all {data-commentary-width=500}
 ```{r}
