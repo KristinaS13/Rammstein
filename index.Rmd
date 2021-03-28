@@ -127,7 +127,7 @@ Moelants' findings, current corpus' tempo distribution and [Spotify's own value 
 Although metal music can cover a wide scale of tempos, **preferred tempo range is still reflected in Rammstein's discography**, further indicating that it indeed might be more *natural* to compose songs in that tempo range.\
 
 
-### Tempogram Ich will feuer frei
+### Tempogram Ich will feuer frei FIX
 
 ```{r}
 knitr::include_graphics("tempograms.png")
@@ -137,7 +137,7 @@ knitr::include_graphics("tempograms.png")
 tba
 
 
-### Plotting popularity
+### Plotting popularity FIX
 ```{r}
 pop_overall <- read_csv(file = "pop_sel_alb_tot.csv")
 
@@ -196,7 +196,7 @@ ggplotly(pop_boxplot, tooltip = c("track.popularity", "track.name"))
 (tbu)
 
 
-### "Constants" in the Corpus 
+### "Constants" in the Corpus FIX
 
 ```{r}
 constants <- read_csv("constant_features.csv")
@@ -226,7 +226,7 @@ ggplotly(constants_plot)
 Introduction {.storyboard}
 =======================================================================
 
-### (A)Typical Rammstein: Perception vs Computation
+### (A)Typical Rammstein: perception and computation FIX
 ```{r}
 heatmap_data <- read_csv(file = "heatmap_test.csv")
 heatmap_data[, 3] <- round(heatmap_data[, 3], digits = 3)
@@ -256,16 +256,16 @@ ggplotly(heatmap_table)
 ```
 
 ***
-(tbu: playlist, add features that are not 0-1 to a separate table, re-arrange features)
 
 For detailed, low-level audio analysis, typical and atypical songs have to be established. What songs would make you exclaim “yes, of course this is Rammstein”? Personally, I chose Du Hast and Ich will. Of course, this approach is highly subjective and influenced by a plethora of external reasons, such as track popularity, familiarity with the artist, individual biases and tastes. To expand the notion of “typical” to include not only my personal judgements, but also those of a potentially impartial algorithm, standardizes z-scores based on all audio features were computed. The songs that scored nearest to 0, mainly Feuer Frei! and Hallomann were chosen as representatives. 
 
 The same approach was taken when selecting atypical songs. In my opinion, Te Quiero Puta! may be the most un-Rammstein song they have ever released. In the context of all their other recordings, this metal-meets-mariachi song sounds novel. Another unique track is Ausländer. It sounds so catchy and pop-y, that it might have been a successful (rock)club song. Unsurprisingly, z-scores indicated that Ein Lied and Roter Sand – Orchester Version differ from the rest of the corpus. 
 
 Summary: typical songs - Feuer Frei!, Hallomann, Ich will, Du Hast; atypical songs – Ein Lied, Roter Sand – Orchester Version, Te Quiero Puta!, Ausländer.
+ADD PLAYLIST, HOW DECIDED ATYPICAL
  
 
-### Extra things
+### FIX
 ```{r}
 table_typatyp <- read_csv(file = "other_features.csv")
 
@@ -276,7 +276,7 @@ table_ta <- formattable(table_typatyp,
 table_ta
 ```
 
-### Chordograms
+### FIX
 
 ```{r}
 knitr::include_graphics("chordograms.png")
@@ -288,7 +288,7 @@ Althought both of these songs are labeled as atypical by me, they are very diffe
 Ausländer chordogram, on the other hand, shows no clear patterns, except for darker bands at F:7 and D:maj.
 
 
-### Self-similarity matrix
+### FIX
 
 ```{r}
 knitr::include_graphics("self similarity auslander du hast.png")
@@ -298,7 +298,6 @@ knitr::include_graphics("self similarity roter sand halloman.png")
 ***
 1st picture: SSM for Ausländer, 2nd picture: SSM for Du hast (TBU: add titles directly to plots).
 The self-similarity matrix for Ausländer shows very clear repetitiveness in both chroma and timbre plots. The checkerboard pattern shows that a passage is repeated throughout the song. In Du hast timbre plot, we can see a couple of thin (60, 170) yellow lines, which highlight novel parts, whereas in Ausländer, the yellow lines are thicker and re-occur throughout the song.
-
 
 
 ### `r emo::ji("fire")` `r emo::ji("rock-on")` Why **Rammstein**? Get to know RQs and corpus `r emo::ji("rock-on")` `r emo::ji("fire")` {data-commentary-width=800}
@@ -385,11 +384,11 @@ ADD AT THE END
 <iframe src="https://open.spotify.com/embed/playlist/65oczv23Ru6JUSSgLdCnwe" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
 
-### Atypical song: Ausländer chroma features
+### FIX
 
 ```{r}
 knitr::include_graphics("chroma features.png")
 ```
 
 ***
-The melody seems to be the strongest in A#/Bb.
+FIX
