@@ -47,6 +47,7 @@ studio_albums_r <- all_albums_r %>%
   filter(album_name != "Live aus Berlin")
 
 audio_features_r <- studio_albums_r %>% select(track_name, danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo, album_name)
+audio_features_r <- audio_features_r[!duplicated(audio_features_r[c("track_name")]),]
 ```
 
 Visualization {.storyboard}
@@ -137,7 +138,7 @@ The results of the classification are quite fascinating. Firstly, Rammstein has 
 \
 Secondly, the **happiest songs are [Bestrafe mich](https://open.spotify.com/track/5QueZSIpWUbH4nLZlkjjkP?si=108dc6646b134604) and [Eifersucht](https://open.spotify.com/track/2R5Zsb2TtsjHAEJFUZvf7v?si=00d5442604b84d03)**. Please take a listen and judge yourself whether these songs sound happy! I would guess that they do not. To me, [Ausländer](https://open.spotify.com/track/7j43FohbLVulScL7S9sQZk?si=3fbfb78e83f04eb8) is the happiest track out of the whole discography, but it is in the *angry* quadrant. These misalignments might indicate that Spotify's **features do not directly correspond to arousal and valence of the circumplex model**. \
 \
-The **angriest song is [Rammlied](https://open.spotify.com/track/2BQFnSQymvASqEMIrwe7tp?si=16cb452cbf3c4fa9)**, which I agree with. This powerful album opening song has an apocalyptic vibe to it, with pronounced guitar riffs and devilish Till's vocals juxtaposed with church choir in the background. This is a grandstanding song that just sounds *powerful and furious*. \
+The **angriest song is [Rammlied](https://open.spotify.com/track/2BQFnSQymvASqEMIrwe7tp?si=16cb452cbf3c4fa9)**, which I agree with. This powerful album opening song has an apocalyptic vibe to it, with a pronounced bass guitar and devilish Till's vocals juxtaposed with church choir in the background. This is a grandstanding song that just sounds *powerful and furious*. \
 \
 Unsurprisingly, **[Ein Lied](https://open.spotify.com/track/4L4oCtdmqjxS8AjkzjLGDQ) is the most unhappy song**. Ein Lied is one of their slowest songs, with acoustic guitars, ethereal synthesizers and theremin-like keyboards being the focus of the song's instrumental. The percussion is completely absent from this song. The vocal line is soft, partly spoken, partly sung using low breathy tones, which is atypical of Rammstein. \
 \
@@ -164,11 +165,11 @@ knitr::include_graphics("tempograms.png")
 ```
 
 ***
-The two cyclic **tempograms** at the left illustrate Spotify's estimated tempo for two typical songs: [*Feuer Frei!*](https://open.spotify.com/track/73JZKk0nb1WOUmh1Eo3Unc?si=d4ce04364a7b416c) and [*Ich will*](https://open.spotify.com/track/3X0K6fII7VIwL1URPrp8Ko?si=0452ce9b758a40a4). Overall, the estimated **tempo** (yellow line) is **strong and stable** throughout the duration of both songs. The excerpts where the line breaks correspond to fragraments of the songs where minimal instrumental accompaniment is present. \
+The two cyclic **tempograms** at the left illustrate Spotify's estimated tempo for two typical songs: [*Feuer Frei!*](https://open.spotify.com/track/73JZKk0nb1WOUmh1Eo3Unc?si=d4ce04364a7b416c) and [*Ich will*](https://open.spotify.com/track/3X0K6fII7VIwL1URPrp8Ko?si=0452ce9b758a40a4). Overall, the estimated **tempo** (yellow line) is **strong and stable** throughout the duration of both songs. The excerpts where the **line breaks** correspond to fragraments of the songs where **minimal instrumental accompaniment** is present. \
 \
 Interestingly, **Feuer Frei! sounds way faster to me than Ich will**. I would even say that *Feuer Frei!* is one of the fastest songs in the corpus, whereas Spotify claims that it is actually on the slower side. My personal estimation of tempo for **Feuer Frei!** would stand at around twice Spotify's - **190 BPM**. **Ich will's** BPM makes sense, as it is indeed **~128 BPM**.\
 \
-Because Spotify's BPM estimation might be based on tatums, which are subdivisions of beats, we get this inaccurate tempo. In short, if there is one particular tempo, Spotify probably captures twice and thrice the BPM. Spotify most probably chose the lower band, which we now see on the *Feuer frei!* tempogram - **95 BPM**, whereas the *true* tempo is twice as fast - **190 BPM**. \
+Because Spotify's BPM estimation might be based on tatums, which are subdivisions of beats, we get this inaccurate tempo. In short, if there is one particular tempo, Spotify probably captures twice and thrice the BPM. Spotify most probably chose the lower band (*tempo subharmonic*), which we now see on the *Feuer frei!* tempogram - **95 BPM**, whereas the *true* tempo is twice as fast - **190 BPM**. \
 \
 Here we saw an example of Spotify API's faulty judgement, along with an accurate one. **Spotify's beat tracking technique is not bulletproof!**
 
@@ -248,7 +249,7 @@ The most attentive readers might have noticed, that atypical songs - **Ein Lied*
 \
 All in all, we can see a trend: despite being older albums, **Sehnsucht (1997) and Mutter (2001) are more popular than their newer counterpart Rosenrot (2005)**.
 
-### "Constants" in the Corpus FIX
+### **Rammstein *sound*** - are there any constants in the corpus?
 
 ```{r}
 constants <- read_csv("constant_features.csv")
@@ -273,7 +274,16 @@ ggplotly(constants_plot)
 ```
 
 *** 
-(tbu)
+After feature overview in the previous tab, more or less homogeneous features throughout the discography were plotted. The plot on the left shows mean feature values per album. \
+\
+As can be seen, the only truly constant feature is **speechiness**. Speechiness detects the presence of spoken words, so it is natural that Rammstein's albums **constantly score low**, as they contain non-speech-like tracks. \
+\
+**Acousticness** was below 0.04 for the first 4 albums, but rose starting *Rosenrot*. That is not surprising - *Rosenrot* has their first acoustic ballad, *Ein Lied*. *LIFAD* includes *Roter Sand*, *Roter Sand (Orchester Version)* and [*Liese*](https://open.spotify.com/track/6mdhbYs5sY1fXFk86bsnyD?si=0b0137fca8954bda), *Rammstein* has [*Diamant*](https://open.spotify.com/track/1UZs9dauJnxrqYxMIzxnwC?si=1772b45d8f334bbe). \
+\
+**Instrumentalness** is all over the place, as albums do vary in vocal content per song. **Liveness** detects the presence of an audience in the tracks. The differences can be attributed to background cheers and other noisy effects used, such as marching sounds in [*Links 2 3 4*](https://open.spotify.com/track/52XYwQKlXp7scE7KrBBCID?si=4301bb2dcb7047a0), and Till's crowd-like counting in [*Sonne*](https://open.spotify.com/track/3gVhsZtseYtY1fMuyYq06F?autoplay=true). \
+\
+In conclusion, **only speechiness can be considered a constant feature throughout Rammstein's discography**, but it is **not likely** to be a feature that can characterize the ***Rammstein sound***.
+
 
 Introduction {.storyboard}
 =======================================================================
@@ -320,7 +330,7 @@ table_ta
 
 ***
 
-For detailed, low-level audio analysis, typical and atypical songs have to be established.
+For detailed, low-level audio analysis, typical and atypical songs have to be established. \
 \
 What songs would make you exclaim “yes, of course this is Rammstein!”? Personally, I chose **Du hast** and **Ich will**. Of course, this approach is *highly subjective* and influenced by a plethora of external reasons, such as *track popularity*, *familiarity with the artist*, *individual biases* and *tastes*. To expand the notion of “typical” to include not only my personal judgements, but also those of a potentially impartial algorithm, **standardizes z-scores** based on all audio features were computed. The songs that scored nearest to 0, mainly **Feuer Frei!** and **Hallomann** were chosen as representatives. \
 \
@@ -333,17 +343,20 @@ The same approach was taken when selecting atypical songs. In my opinion, **Te Q
 The Spotify Audio Features per song are presented in an interactive heat table on the left. Additionally, I compiled a playlist of typical/atypical songs! ↓
 ADD PLAYLIST!!!!!!!!!!!!!!!!!!!!
 
-### FIX
+### **Chordograms**: *Du hast* and *Te Quiero Puta!* are matching!
 
 ```{r}
 knitr::include_graphics("chordograms.png")
 ```
 
 ***
-1st picture: chordogram for Te Quiero Puta!, 2nd picture: Ausländer (TBU: add titles directly to plots).
-Althought both of these songs are labeled as atypical by me, they are very different when compared by chordograms. For Te Quiero Puta!, D:maj is noted by a darker band throughout the song. Around 160, a yellow line, indicating a bridge has started.
-Ausländer chordogram, on the other hand, shows no clear patterns, except for darker bands at F:7 and D:maj.
-
+**Chordograms** show what chords are active at a particular point of time. \
+\
+Though **Du hast** is labeled as **typical** by me, and **Te Quiero Puta!** **atypical**, they have a very **similar chord profile**. In both songs, **G#:min, D:maj and F:7 are the most active**. Also, around 150 150 s, both of the chordograms exhibit a yellow line, indicating that the bridge has started. \
+\
+**Te Quiero Puta!** is unusual for *Rammstein* mainly because it is their only song fully written in *Spanish*. In addition, the **brass section** (trumpets) is striking and has never been as pronounced as in *Te Quiero Puta!*; the song has a strong *Hispanic flair* to it. \
+\
+Overall, the **chord similarity** is understandable, as both songs have the **Rammstein sound** to them, that is heavy, distorted guitars.
 
 ### FIX
 
@@ -366,7 +379,7 @@ The self-similarity matrix for Ausländer shows very clear repetitiveness in bot
 Almost unanimously, critics and fans alike agree on the worst **Rammstein** album, which is said to be [*Rosenrot* (2005)](https://open.spotify.com/album/3PrS5X3QNdDUlBIE4bz6J2). Listeners note that the album is “[…] a disjointed effort glued together with some iron-clad bangers” ([Chillingworth, 2019](https://www.loudersound.com/features/every-rammstein-album-ranked-from-worst-to-best)) and “[…] feels like a thrown-together collection of B-sides (because, essentially, it was)” ([sean_themighty, 2019](https://www.reddit.com/r/Rammstein/comments/ap83rs/anybody_agree/)). \
 \
 Interestingly, album rankings oftentimes also agree on the best album – [*Mutter* (2001)](https://open.spotify.com/album/2tHCY2fDMi0NqeGZcAxNSc), describing it as “[…] just....legendary” ([JonWood007
-, 2020](https://www.reddit.com/r/Rammstein/comments/gbbs9i/all_rammstein_albums_ranked_from_worst_to_best/)). Furthermore, the album is ranked 324 in *Rock Hard* magazine's book of *The 500 Greatest Rock & Metal Albums of All Time* ([Rock Hard, 2005)](https://en.wikipedia.org/wiki/Mutter_(album)#cite_note-11)). Another strong contender for the title of the most loved **Rammstein** album, sometimes tied with *Mutter*, is [*Sehnsucht* (1997)](https://open.spotify.com/album/2w6Vy8qZLU4niyQAHyu0Ag). The album contains well-known masterpieces, such as *Du hast* and *Engel*. \
+, 2020](https://www.reddit.com/r/Rammstein/comments/gbbs9i/all_rammstein_albums_ranked_from_worst_to_best/)). Furthermore, the album is ranked 324 in *Rock Hard* magazine's book of *The 500 Greatest Rock & Metal Albums of All Time* ([Rock Hard, 2005](https://en.wikipedia.org/wiki/Mutter_(album)#cite_note-11)). Another strong contender for the title of the most loved **Rammstein** album, sometimes tied with *Mutter*, is [*Sehnsucht* (1997)](https://open.spotify.com/album/2w6Vy8qZLU4niyQAHyu0Ag). The album contains well-known masterpieces, such as *Du hast* and *Engel*. \
 \
 Additionally, **Rammstein** has quite a recognizable sound that is usually attributed to distinctive guitars along with Till Lindemann’s baritone and exaggerated trills (so-called rolled r’s). \
 \
@@ -385,13 +398,13 @@ The corpus consists of released studio albums by **Rammstein** (7 albums, 82 son
 - [*Liebe ist für alle da* (2009)](https://open.spotify.com/album/29J0MchD0OWNeiMNbPDwfa?si=4005f993c4f74d90) \
 - [*Untitled* (or RAMMSTEIN) (2019)](https://open.spotify.com/album/1LoyJQVHPLHE3fCCS8Juek?si=FnvCowknROKrf1BzXMerBQ) \
 \
-Click through the tabs to find out more!
+**Click through the tabs to find out more!**
 
 ***
 
 <img src="rushb.jpg" width="100%">
 
-### Audio Feature overview per album 1: **keys** vary, **mode** is major {data-commentary-width=500}
+### Audio Feature overview per album 1: **keys** vary, **mode** is predominantly major {data-commentary-width=500}
 
 ```{r out.width = "700px"}
 knitr::include_graphics("key histograms.png")
@@ -441,11 +454,10 @@ ADD AT THE END
 <iframe src="https://open.spotify.com/embed/playlist/65oczv23Ru6JUSSgLdCnwe" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
 
-### FIX
-
-```{r}
-knitr::include_graphics("chroma features.png")
-```
-
+### Chromagrms FIX 
+<div style="max-width:1920px; margin: 0 auto;">
+blablabla 
 ***
-FIX
+<img src="chroma features.png" width="60%">
+***
+blaaaa
