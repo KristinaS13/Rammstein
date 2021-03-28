@@ -69,8 +69,8 @@ Choosing top predictors (loudness, c12, c04) and features used for previous anal
 **Training a classifier using so many categories (Audio Features, timbre components), whilst having a small corpus (82 songs) will most probably lead to poor performance, as the variability is extremely high. No definite conclusions can be drawn from k-NN results. **
 
 
-### **Hierarchical k-Means clustering**: *Sehnsucht* & *Mutter* are Neighbours, *Rosenrot* is their Distant Friend {data-commentary-width=600}
-```{r out.width = "600px"}
+### **Hierarchical k-Means clustering**: *Sehnsucht* & *Mutter* are Neighbours, *Rosenrot* is their Distant Friend {data-commentary-width=650}
+```{r out.width = "530px"}
 knitr::include_graphics("Distance matrix for albums1.png")
 knitr::include_graphics("Hierarchical clustering.png")
 ```
