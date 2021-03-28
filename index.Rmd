@@ -38,6 +38,15 @@ library(formattable)
 library(tidyr)
 library(shiny)
 library(shinyWidgets)
+
+all_albums_r <- get_artist_audio_features("rammstein")
+
+studio_albums_r <- all_albums_r %>% 
+  filter(album_name != "XXI - Klavier") %>% 
+  filter(album_name != "RARITÄTEN (1994 - 2012)") %>% 
+  filter(album_name != "Live aus Berlin")
+
+audio_features_r <- studio_albums_r %>% select(track_name, danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo, album_name)
 ```
 
 Visualization {.storyboard}
@@ -94,7 +103,27 @@ Indeed, as can be seen from both the distance matrix and hierarchical k-means cl
 
 ### **Valence** and **Energy** in context: **Rammstein** is *angry*, but also *happy* and not *calm* at all {data-commentary-width=500}
 ```{r}
-knitr::include_graphics("emotions.png")
+what_is <- ggplot(audio_features_r, aes(x = energy, y = valence, label = track_name)) + 
+  geom_point(aes(color = album_name)) +
+  theme_minimal() +
+   scale_x_continuous(         
+    limits = c(0, 1),
+    breaks = c(0, 0.5, 1),   
+    minor_breaks = NULL       
+  ) +
+  scale_y_continuous(
+    limits = c(0, 1),
+    breaks = c(0, 0.5, 1),
+    minor_breaks = NULL
+  ) +
+  geom_vline(xintercept = 0.5, linetype="dotted", color = "black", alpha = 0.7) + 
+  geom_hline(yintercept = 0.5, linetype="dotted", color = "black", alpha = 0.7) + 
+  annotate("text", 0.05, 0.05, label = "Sad", color = "black", fontface="bold") +
+  annotate("text", 0.05, 0.95, label = "Calm", color = "black", fontface="bold") +
+  annotate("text", 0.95, 0.05, label = "Angry", color = "black", fontface="bold") +
+  annotate("text", 0.95, 0.95, label = "Happy", color = "black", fontface="bold") +
+  labs(x = "Energy", y = "Valence", title = "Rammstein's emotions", colour = "Album", label = "track_name")
+ggplotly(what_is, tooltip = "track_name")
 ```
 
 ***
@@ -137,7 +166,8 @@ knitr::include_graphics("tempograms.png")
 tba
 
 
-### Plotting popularity FIX
+### **Popularity**: *Sehnsucht* and *Mutter* are still relevant, but is *Rosenrot*? {data-commentary-width=500}
+
 ```{r}
 pop_overall <- read_csv(file = "pop_sel_alb_tot.csv")
 
@@ -189,12 +219,35 @@ pop_boxplot <- ggplot(pop_overall, aes(x = album.year,
   geom_text(aes("LIEBE IST FÜR ALLE DA (2009)", 72, label = "70", vjust = -1), size = 3, colour = "black") + 
   geom_point(aes(x = "RAMMSTEIN (2019)", y = 77), colour = "black", shape = 3) + 
   geom_text(aes("RAMMSTEIN (2019)", 79, label = "77", vjust = -1), size = 3, colour = "black")
-ggplotly(pop_boxplot, tooltip = c("track.popularity", "track.name"))
+popularity_plot <- ggplotly(pop_boxplot, tooltip = c("track.popularity", "track.name"))
+popularity_plot
+
+#ggp_build <- plotly_build(popularity_plot)
+#ggp_build$layout$height = 300
+#ggp_build$layout$width = 400
+#ggp_build
 ```
-
 ***
-(tbu)
 
+To take as much as I can from Spotify's available data, I also explored the **popularity metric**. Spotify is a bit secretive about the algorithm behind popularity scores, so it is helpful to illustrate datapoints. \
+\
+Spotify provides popularity scores on 3 levels: **track**, **album** and **artist**. All 3 levels can be seen on the interactive plot on the left. Feel free to explore and see where your favorite songs land! \
+\
+[Spotify's documentation page](https://developer.spotify.com/documentation/web-api/reference/#object-audiofeaturesobject) tells us that "the value is between 0 and 100, with 100 being the most popular. The track popularity is calculated by algorithm and is based, in the most part, on the **total number of plays the track has had and how recent those plays are**. **Artist** and **album** popularity is ***derived mathematically* from track popularity**." \
+\
+In theory, if **Rosenrot** is the **least favoured** album, the popularity score on all levels should be the **lowest** among the discography. Conversely, **Mutter** and **Sehnsucht** should have the highest ratings. So does Spotify's data actually support this hypothesis? \
+\
+The answer is *yes* and also *no*. On the track level, **Rosenrot does not contain *only* unpopular songs**. On the album level, however, **Rosenrot is the second least popular album** (68), with *Herzeleid* occupying the first place. One can argue that the recency factor came into play here. *Herzeleid (1995)* was the band's debut album, which came out 25 years ago. *Rosenrot (2005)* is *relatively* new. I think it is a bit tricky to compare such old albums to newer ones; still, *Herzeleid's* median is higher (54) than *Rosenrot's* (50). Moreover, album-level popularity differs by only 1 point. \
+\
+As for **Mutter (2001)** and **Sehnsucht (1997)**, although both of the albums were released a while ago, they are still **very popular on both track and album levels**. On the album level, *Mutter* (75) and *Sehnsucht* (74) share the second and the third place, respectively, overtaken only by **RAMMSTEIN**. *RAMMSTEIN's* popularity might be explained by the fact that it is their most recent album (2019).\
+\
+If we take a look at the track level, **Mutter's** median is **60**, the same value as **RAMMSTEIN's**. Although **Sehnsucht's** median is lower, it contains some of the most popular songs in the corpus - **Du Hast (72)** and **Engel (68)**. **Sonne (69)**, the highest rated song from **Mutter** is also in the top 5 most popular Rammstein's songs at the moment. 
+\
+What is going on with **Liebe ist für alle da (2009)**, though? The tracks are low on the popularity scale, but the album's popularity is comparatively high (70). These ratings seem counterintuitive. The explanation might be hidden in some Spotify's algorithm's pecularity, as the raw popularity is probably scaled separetely per level (track, album, artist). \
+\
+The most attentive readers might have noticed, that atypical songs - **Ein Lied** (45, *Rosenrot, 2005*) and **Roter Sand - Orchester Version** (31, *LIFAD, 2009*) are not only the **least popular songs** from the albums, but also in the whole discography.
+\
+All in all, we can see a trend: despite being older albums, **Sehnsucht (1997) and Mutter (2001) are more popular than their newer counterpart Rosenrot (2005)**.
 
 ### "Constants" in the Corpus FIX
 
