@@ -101,7 +101,7 @@ In this method, sum of squares at each number of clusters (in my case, from 2 to
 \
 Indeed, as can be seen from both the distance matrix and hierarchical k-means clustering, **Sehnsucht and Mutter share more similarities with each other than with Rosenrot**, which is grouped with RAMMSTEIN, which **supports the idea that Rosenrot is somehow different from Mutter and Sehnsucht**. \
 
-### **Valence** and **Energy** in context: **Rammstein** is *angry*, but also *happy* and not *calm* at all {data-commentary-width=500}
+### **Valence** and **Energy** in context: **Rammstein** is *angry*, but also *happy* and not *calm* at all  {data-commentary-width=500px}
 ```{r}
 what_is <- ggplot(audio_features_r, aes(x = energy, y = valence, label = track_name)) + 
   geom_point(aes(color = album_name)) +
