@@ -123,7 +123,7 @@ what_is <- ggplot(audio_features_r, aes(x = energy, y = valence, label = track_n
   annotate("text", 0.95, 0.05, label = "Angry", color = "black", fontface="bold") +
   annotate("text", 0.95, 0.95, label = "Happy", color = "black", fontface="bold") +
   labs(x = "Energy", y = "Valence", title = "Rammstein's emotions", colour = "Album", label = "track_name")
-ggplotly(what_is, tooltip = "track_name")
+ggplotly(what_is, tooltip = "track_name", height = 350, width=300)
 ```
 
 ***
@@ -156,18 +156,23 @@ Moelants' findings, current corpus' tempo distribution and [Spotify's own value 
 Although metal music can cover a wide scale of tempos, **preferred tempo range is still reflected in Rammstein's discography**, further indicating that it indeed might be more *natural* to compose songs in that tempo range.\
 
 
-### Tempogram Ich will feuer frei FIX
+### *Tempograms*: **Ich will** is *faster* than **Feuer frei!**? {data-commentary-width=650}
 
-```{r}
+```{r out.width = "650px"}
+knitr::include_graphics("ff_temp.png")
 knitr::include_graphics("tempograms.png")
 ```
 
 ***
-tba
-
+The two cyclic **tempograms** at the left illustrate Spotify's estimated tempo for two typical songs: [*Feuer Frei!*](https://open.spotify.com/track/73JZKk0nb1WOUmh1Eo3Unc?si=d4ce04364a7b416c) and [*Ich will*](https://open.spotify.com/track/3X0K6fII7VIwL1URPrp8Ko?si=0452ce9b758a40a4). Overall, the estimated **tempo** (yellow line) is **strong and stable** throughout the duration of both songs. The excerpts where the line breaks correspond to fragraments of the songs where minimal instrumental accompaniment is present. \
+\
+Interestingly, **Feuer Frei! sounds way faster to me than Ich will**. I would even say that *Feuer Frei!* is one of the fastest songs in the corpus, whereas Spotify claims that it is actually on the slower side. My personal estimation of tempo for **Feuer Frei!** would stand at around twice Spotify's - **190 BPM**. **Ich will's** BPM makes sense, as it is indeed **~128 BPM**.\
+\
+Because Spotify's BPM estimation might be based on tatums, which are subdivisions of beats, we get this inaccurate tempo. In short, if there is one particular tempo, Spotify probably captures twice and thrice the BPM. Spotify most probably chose the lower band, which we now see on the *Feuer frei!* tempogram - **95 BPM**, whereas the *true* tempo is twice as fast - **190 BPM**. \
+\
+Here we saw an example of Spotify API's faulty judgement, along with an accurate one. **Spotify's beat tracking technique is not bulletproof!**
 
 ### **Popularity**: *Sehnsucht* and *Mutter* are still relevant, but is *Rosenrot*? {data-commentary-width=500}
-
 ```{r}
 pop_overall <- read_csv(file = "pop_sel_alb_tot.csv")
 
@@ -219,13 +224,7 @@ pop_boxplot <- ggplot(pop_overall, aes(x = album.year,
   geom_text(aes("LIEBE IST FÜR ALLE DA (2009)", 72, label = "70", vjust = -1), size = 3, colour = "black") + 
   geom_point(aes(x = "RAMMSTEIN (2019)", y = 77), colour = "black", shape = 3) + 
   geom_text(aes("RAMMSTEIN (2019)", 79, label = "77", vjust = -1), size = 3, colour = "black")
-popularity_plot <- ggplotly(pop_boxplot, tooltip = c("track.popularity", "track.name"))
-popularity_plot
-
-#ggp_build <- plotly_build(popularity_plot)
-#ggp_build$layout$height = 300
-#ggp_build$layout$width = 400
-#ggp_build
+ggplotly(pop_boxplot, tooltip = c("track.popularity", "track.name"), height = 500, width = 800)
 ```
 ***
 
@@ -241,11 +240,11 @@ The answer is *yes* and also *no*. On the track level, **Rosenrot does not conta
 \
 As for **Mutter (2001)** and **Sehnsucht (1997)**, although both of the albums were released a while ago, they are still **very popular on both track and album levels**. On the album level, *Mutter* (75) and *Sehnsucht* (74) share the second and the third place, respectively, overtaken only by **RAMMSTEIN**. *RAMMSTEIN's* popularity might be explained by the fact that it is their most recent album (2019).\
 \
-If we take a look at the track level, **Mutter's** median is **60**, the same value as **RAMMSTEIN's**. Although **Sehnsucht's** median is lower, it contains some of the most popular songs in the corpus - **Du Hast (72)** and **Engel (68)**. **Sonne (69)**, the highest rated song from **Mutter** is also in the top 5 most popular Rammstein's songs at the moment. 
+If we take a look at the track level, **Mutter's** median is **60**, the same value as **RAMMSTEIN's**. Although **Sehnsucht's** median is lower, it contains some of the most popular songs in the corpus - **Du Hast (72)** and **Engel (68)**. **Sonne (69)**, the highest rated song from **Mutter** is also in the top 5 most popular Rammstein's songs at the moment. \
 \
 What is going on with **Liebe ist für alle da (2009)**, though? The tracks are low on the popularity scale, but the album's popularity is comparatively high (70). These ratings seem counterintuitive. The explanation might be hidden in some Spotify's algorithm's pecularity, as the raw popularity is probably scaled separetely per level (track, album, artist). \
 \
-The most attentive readers might have noticed, that atypical songs - **Ein Lied** (45, *Rosenrot, 2005*) and **Roter Sand - Orchester Version** (31, *LIFAD, 2009*) are not only the **least popular songs** from the albums, but also in the whole discography.
+The most attentive readers might have noticed, that atypical songs - **Ein Lied** (45, *Rosenrot, 2005*) and **Roter Sand - Orchester Version** (31, *LIFAD, 2009*) are not only the **least popular songs** from the albums, but also in the whole discography. \
 \
 All in all, we can see a trend: despite being older albums, **Sehnsucht (1997) and Mutter (2001) are more popular than their newer counterpart Rosenrot (2005)**.
 
@@ -367,7 +366,7 @@ The self-similarity matrix for Ausländer shows very clear repetitiveness in bot
 Almost unanimously, critics and fans alike agree on the worst **Rammstein** album, which is said to be [*Rosenrot* (2005)](https://open.spotify.com/album/3PrS5X3QNdDUlBIE4bz6J2). Listeners note that the album is “[…] a disjointed effort glued together with some iron-clad bangers” ([Chillingworth, 2019](https://www.loudersound.com/features/every-rammstein-album-ranked-from-worst-to-best)) and “[…] feels like a thrown-together collection of B-sides (because, essentially, it was)” ([sean_themighty, 2019](https://www.reddit.com/r/Rammstein/comments/ap83rs/anybody_agree/)). \
 \
 Interestingly, album rankings oftentimes also agree on the best album – [*Mutter* (2001)](https://open.spotify.com/album/2tHCY2fDMi0NqeGZcAxNSc), describing it as “[…] just....legendary” ([JonWood007
-, 2020](https://www.reddit.com/r/Rammstein/comments/gbbs9i/all_rammstein_albums_ranked_from_worst_to_best/)). Furthermore, the album is ranked 324 in *Rock Hard* magazine's book of *The 500 Greatest Rock & Metal Albums of All Time* [(Rock Hard, 2005)](https://en.wikipedia.org/wiki/Mutter_(album)#cite_note-11). Another strong contender for the title of the most loved **Rammstein** album, sometimes tied with *Mutter*, is [*Sehnsucht* (1997)](https://open.spotify.com/album/2w6Vy8qZLU4niyQAHyu0Ag). The album contains well-known masterpieces, such as *Du hast* and *Engel*. \
+, 2020](https://www.reddit.com/r/Rammstein/comments/gbbs9i/all_rammstein_albums_ranked_from_worst_to_best/)). Furthermore, the album is ranked 324 in *Rock Hard* magazine's book of *The 500 Greatest Rock & Metal Albums of All Time* ([Rock Hard, 2005)](https://en.wikipedia.org/wiki/Mutter_(album)#cite_note-11)). Another strong contender for the title of the most loved **Rammstein** album, sometimes tied with *Mutter*, is [*Sehnsucht* (1997)](https://open.spotify.com/album/2w6Vy8qZLU4niyQAHyu0Ag). The album contains well-known masterpieces, such as *Du hast* and *Engel*. \
 \
 Additionally, **Rammstein** has quite a recognizable sound that is usually attributed to distinctive guitars along with Till Lindemann’s baritone and exaggerated trills (so-called rolled r’s). \
 \
