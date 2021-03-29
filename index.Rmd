@@ -93,8 +93,7 @@ For those who are unfamiliar with the band, I have compiled a short (10 song) pl
 **Listen to "RAMMSTEIN: Beyond Du Hast" playlist here** →
 
 ***
-ADD AT THE END
-<iframe src="https://open.spotify.com/embed/playlist/65oczv23Ru6JUSSgLdCnwe" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
 
 ### Audio Feature overview per album 1: **keys** vary, **mode** is predominantly major {data-commentary-width=500}
 
@@ -188,8 +187,7 @@ The same approach was taken when selecting atypical songs. In my opinion, **Te Q
 - **typical songs** - Feuer Frei!, Hallomann, Ich will, Du Hast; \
 - **atypical songs** – Ein Lied, Roter Sand – Orchester Version, Te Quiero Puta!, Ausländer. \
 \
-The Spotify Audio Features per song are presented in an interactive heat table on the left. Additionally, I compiled a playlist of typical/atypical songs! ↓
-ADD PLAYLIST!!!!!!!!!!!!!!!!!!!!
+The Spotify Audio Features per song are presented in an interactive heat table on the left. Additionally, I compiled a **playlist of typical/atypical songs**! ↓
 
 
 ### **Valence** and **Energy** in context: **Rammstein** is *angry*, but also *happy* and not *calm* at all {data-commentary-width=700px}
@@ -414,7 +412,7 @@ If we take a look at the track level, **Mutter's** median is **60**, the same va
 \
 What is going on with **Liebe ist für alle da (2009)**, though? The tracks are low on the popularity scale, but the album's popularity is comparatively high (70). These ratings seem counterintuitive. The explanation might be hidden in some Spotify's algorithm's pecularity, as the raw popularity is probably scaled separetely per level (track, album, artist). \
 \
-The most attentive readers might have noticed, that atypical songs - **Ein Lied** (45, *Rosenrot, 2005*) and **Roter Sand - Orchester Version** (31, *LIFAD, 2009*) are not only the **least popular songs** from the albums, but also in the whole discography. \
+The most attentive readers might have noticed that atypical songs - **Ein Lied** (45, *Rosenrot, 2005*) and **Roter Sand - Orchester Version** (31, *LIFAD, 2009*) are not only the **least popular songs** from the albums, but also in the whole discography. \
 \
 All in all, we can see a trend: despite being older albums, **Sehnsucht (1997) and Mutter (2001) are more popular than their newer counterpart Rosenrot (2005)**.
 
@@ -481,9 +479,9 @@ Here is a **summary of the main findings**: \
 \
 Based on these findings, I can conclude that **lower danceability, lower energy, lower valence, loudness and tempo variations** *might* have contributed to **Rosenrot** hate. I am emphasizing *might*, because I do believe that *other factors* than musical features have a more substantial weight in such popularity distribution. **Rosenrot (2004)** is basically a *b-side album*, released 1 year after a succesful **Reise, Reise (2004)**. It was originally intended to be titled *Reise, Reise, Vol. II*. The album lacks distinctiveness and personality, as it really sounds like a compilation of non-single songs. **Sehnsucht** and **Mutter**, on the other hand, contain strong singles (i.e. Engel, Du hast, Sonne, etc.) along with charting b-sides (i.e. [Bück dich](https://open.spotify.com/track/0SCkN2QprWk02svK0HCZ2n?si=242f4bc3b76f4172)). This trend also seen in **popularity scores**. It is important to mention that album success is majorly influenced by marketing, producers, etc. \
 \
-Also, **Rammstein sound** could not be attributed to a single Spotify Audio Feature. **Rammstein** represent the dance-metal genre, which is a cross between alternative metal and electro-industrial music genres. This genre hodgepodge is characterized by predominantly German lyrics, overpronounciation of certain letters (/r/, in this case) and heavily distorted, low guitars. These cues help listeners to identify **Rammstein** as **Rammstein**, the pioneers of Tanzmetall. An **important extra-musical constant**, especially considering that the band has been active for 25+ years, are the **group members**. The group's composition hasn't changed once, which contributes to the continuous **Rammstein sound**. Comparing **Rammstein** to other Neue Deutsche Härte/metal bands could provide more information on why their sound is so recognizable. Comparing bands within a genre would also expand this research's *external validity*. \
+Also, **Rammstein sound** could not be attributed to a single Spotify Audio Feature. **Rammstein** represent the dance-metal genre, which is a cross between alternative metal and electro-industrial music genres. This genre hodgepodge is characterized by predominantly German lyrics, overpronounciation of certain letters (/r/, in this case) and heavily distorted, low guitars. These cues help listeners to identify **Rammstein** as **Rammstein**, the pioneers of *Tanzmetall*. An **important extra-musical constant**, especially considering that the band has been active for 25+ years, are the **group members**. The group's composition hasn't changed once, which contributes to the continuous **Rammstein sound**. Comparing **Rammstein** to other *Neue Deutsche Härte/metal bands* could provide more information on why their sound is so recognizable. Comparing bands within a genre would also expand this research's *external validity*. \
 \
-Analysis of **typical and atypical songs** has shown that although the songs differ, they are obviously a **part of one artist's coherent discography**. The tempo estimation and popularity exploration indicate that it is **not a good idea to take Spotify's data at face value**, as the **algorithms behind the API might be, to some extend, unsound**. As mentioned in the Audio Feature Overview, *danceability* is one of the mysterious features that might raise an issue of *construct validity*. Nevertheless, Spotify API provides a lot of valuable features that can be used for MIR and musicological research. \
+Analysis of **typical and atypical songs** has shown that although the songs differ, they are obviously a **part of one artist's coherent discography**. The tempo estimation and popularity exploration indicate that it is **not a good idea to take Spotify's data at face value**, as the **algorithms behind the API might be**, to some extend, **unsound**. As mentioned in the Audio Feature Overview, *danceability* is one of the mysterious features that might raise an issue of *construct validity*. Nevertheless, Spotify API provides a lot of valuable features that can be used for MIR and musicological research. \
 \
 I would like to mention one drawback, that is the fact that **lyrics** were not taken into account for this research. Lyrical content is of crucial importance to **Rammstein**, as Till *poetically* sings about taboo topics, such as *cannibalism* ([Mein Teil](https://open.spotify.com/track/4Hp6GJYHQxhb3OyFicO79j)), *stalking* ([Du Riechst So Gut](https://open.spotify.com/track/73se54LukI1xEPE8XKsrWf?si=e6298d1a28e24a74)) and *pyromania* ([Benzin](https://open.spotify.com/track/1XanLfYUUBB6bLbnSh1KyU?si=786767a37bd04984)). Most of the lyrics are inspired or based on real-life events. Conducting **sentiment analysis** on the lyrics and **analyzing Spotify API's provided features** would be useful for future research. Such a combination would control for a possible confounding variable, that is lyrical content, that might have altered the *internal validity* of the current research. \
 \
