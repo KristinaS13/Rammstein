@@ -343,7 +343,7 @@ The same approach was taken when selecting atypical songs. In my opinion, **Te Q
 The Spotify Audio Features per song are presented in an interactive heat table on the left. Additionally, I compiled a playlist of typical/atypical songs! ↓
 ADD PLAYLIST!!!!!!!!!!!!!!!!!!!!
 
-### **Chordograms**: *Du hast* and *Te Quiero Puta!* are matching!
+### **Chordograms**: *Du hast* and *Te Quiero Puta!* are matching
 
 ```{r}
 knitr::include_graphics("chordograms.png")
@@ -352,23 +352,27 @@ knitr::include_graphics("chordograms.png")
 ***
 **Chordograms** show what chords are active at a particular point of time. \
 \
-Though **Du hast** is labeled as **typical** by me, and **Te Quiero Puta!** **atypical**, they have a very **similar chord profile**. In both songs, **G#:min, D:maj and F:7 are the most active**. Also, around 150 150 s, both of the chordograms exhibit a yellow line, indicating that the bridge has started. \
+Though **Du hast** is labeled as **typical** by me, and **Te Quiero Puta!** **atypical**, they have a very **similar chord profile**. In both songs, **G#:min, D:maj and F:7 are the most active**. Also, around 150 s, both of the chordograms exhibit a yellow line, indicating that the bridge has started. \
 \
 **Te Quiero Puta!** is unusual for *Rammstein* mainly because it is their only song fully written in *Spanish*. In addition, the **brass section** (trumpets) is striking and has never been as pronounced as in *Te Quiero Puta!*; the song has a strong *Hispanic flair* to it. \
 \
 Overall, the **chord similarity** is understandable, as both songs have the **Rammstein sound** to them, that is heavy, distorted guitars.
 
-### FIX
+### **Self-similarity matrices (SSM)**: *repetitiveness and clear structure = atypicalness*?
 
 ```{r}
 knitr::include_graphics("self similarity auslander du hast.png")
-knitr::include_graphics("self similarity roter sand halloman.png")
+#knitr::include_graphics("self similarity roter sand halloman.png")
 ```
 
 ***
-1st picture: SSM for Ausländer, 2nd picture: SSM for Du hast (TBU: add titles directly to plots).
-The self-similarity matrix for Ausländer shows very clear repetitiveness in both chroma and timbre plots. The checkerboard pattern shows that a passage is repeated throughout the song. In Du hast timbre plot, we can see a couple of thin (60, 170) yellow lines, which highlight novel parts, whereas in Ausländer, the yellow lines are thicker and re-occur throughout the song.
-
+On the left, you can see **self-similarity matrices**, where both x and y axes show seconds. **SSMs illustrate pitch- and timbre-based similarity within a chosen track**. The line from the bottom left corner to top right corner is a constant, as we are comparing the song to itself. Are there **systematic differences**, seen SSMs, that **differentiate typical and atypical tracks** of the corpus? \
+\
+In chroma SSM for **Ausländer** (*atypical*), we can see **clear repetitiveness and structure**, as there are visible *checkerboard patterns*, indicating song's homogeneity. The structure of a song, that is **ACBACB**, is represented on the plot. Bright yellow lines, seen often in both chroma and timbre SSMs, mark moments of novelty in *Ausländer*. \
+\
+Plot for **Du hast** (*typical*) tells us a completely different story. Overall, the SSMs are dark, indicating that there are **few novel** moments throughout the song, mainly 1 - at around 145 s, when there is an almost a silent moment in the song. Hardly anything can be said about the song structure, as there are no patterns seen. Overall **timbre is constant**; the song is more or less similar timbre-wise. \
+\
+SSMs have shown that **a typical and an atypical song differ in repetition and novelty patterns**. 
 
 ### `r emo::ji("fire")` `r emo::ji("rock-on")` Why **Rammstein**? Get to know RQs and corpus `r emo::ji("rock-on")` `r emo::ji("fire")` {data-commentary-width=800}
 
@@ -383,7 +387,7 @@ Interestingly, album rankings oftentimes also agree on the best album – [*Mutt
 \
 Additionally, **Rammstein** has quite a recognizable sound that is usually attributed to distinctive guitars along with Till Lindemann’s baritone and exaggerated trills (so-called rolled r’s). \
 \
-Thus, in this portfolio, I will investigate whether Spotyfy's Audio Features and Popularity Scores can provide insights on the following questions: \
+Thus, in this portfolio, I will investigate whether **Spotify's Audio Features** and **Popularity Scores** can provide insights on the following questions: \
 **1.** Why *Mutter*/*Sehnsucht* are so well-received, whereas *Rosenrot* is subject to criticism? \
 **2.** **Rammstein** signature sound: what audio features are constant throughout the discography? \
 **3.** Typical and atypical **Rammstein**: what audio analyses can say about **Rammstein's**  songs? \
@@ -447,17 +451,49 @@ Finally, regarding **tempo**, ***Rosenrot* has more songs in 160 BPM** tempo ran
 
 ### No clue how **Rammstein** sounds? Take a listen! {data-commentary-width=600}
 
-For those who are unfamiliar with the band, I have compiled a short (10 song) playlist with my favourite songs. Listen to "RAMMSTEIN: Beyond Du Hast" playlist here →
+For those who are unfamiliar with the band, I have compiled a short (10 song) playlist with my favourite songs. \
+\
+**Listen to "RAMMSTEIN: Beyond Du Hast" playlist here** →
 
 ***
 ADD AT THE END
 <iframe src="https://open.spotify.com/embed/playlist/65oczv23Ru6JUSSgLdCnwe" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
 
-### Chromagrms FIX 
+### *Chromagrams*: energy in *E* for *typical and atypical* {data-commentary-width=650}
+
+```{r out.width = "800px"}
+knitr::include_graphics("chroma features.png")
+```
+
+***
+
+The **chromagram** shows **how much energy there is in a certain pitch class per moment of time**. Let's see how different or similar typical and atypical songs' chromagrams are. \
+\
+Firstly, **all 3 songs' predominant energy** is in class **E**. It is marked by yellow horizontal bands that can be seen throughout the songs. In **Du hast**, there is a *slight shift towards B* in the second part of the song, but E is still active. \
+\
+Secondly, **Roter Sand's song structure** can be easily worked out just by looking at the chromagram. There are **well-defined blocks**, marking the verses and the chorus, giving the song **ABABB** structure. For **Du hast** and **Ein Lied**, the structure is less clear, as the chromagrams show minimal variation compared to *Roter Sand*. Thirdly, in general, **Du hast's** chromagram has less magnitude.
+
+### **Conclusion**: *Spotify* is *fun* and **Rammstein** is **chaotic**
 <div style="max-width:1920px; margin: 0 auto;">
-blablabla 
+
+In this portfolio, I have explored Rammstein's discography and tried to unravel the mystery behind album acclaim. In total, 82 songs were used for the analyses, from which 4 typical and 4 atypical songs were chosen. \
+\
+Here is a **summary of the main findings**: \
+- **Mutter and Sehnsucht are in the same cluster, whereas Rosenrot is in a separate one**, based on *danceability, energy, valence, loudness and tempo* \
+- **Rosenrot**, albeit newer, **is less popular than Mutter and Sehnsucht** \
+- only **speechiness** is *truly constant* throughout the discography \
+- there are **similarities** (chromagrams, chordograms) and **differences** (SSM) between **typical and atypical songs** \
+\
+Based on these findings, I can conclude that **lower danceability, lower energy, lower valence, loudness and tempo variations** *might* have contributed to **Rosenrot** hate. I am emphasizing *might*, because I do believe that *other factors* than musical features have a more substantial weight in such popularity distribution. **Rosenrot (2004)** is basically a *b-side album*, released 1 year after a succesful **Reise, Reise (2004)**. It was originally intended to be titled *Reise, Reise, Vol. II*. The album lacks distinctiveness and personality, as it really sounds like a compilation of non-single songs. **Sehnsucht** and **Mutter**, on the other hand, contain strong singles (i.e. Engel, Du hast, Sonne, etc.) along with charting b-sides (i.e. [Bück dich](https://open.spotify.com/track/0SCkN2QprWk02svK0HCZ2n?si=242f4bc3b76f4172)). This trend also seen in **popularity scores**. It is important to mention that album success is majorly influenced by marketing, producers, etc. \
+\
+Also, **Rammstein sound** could not be attributed to a single Spotify Audio Feature. **Rammstein** represent the dance-metal genre, which is a cross between alternative metal and electro-industrial music genres. This genre hodgepodge is characterized by predominantly German lyrics, overpronounciation of certain letters (/r/, in this case) and heavily distorted, low guitars. These cues help listeners to identify **Rammstein** as **Rammstein**, the pioneers of Tanzmetall. An **important extra-musical constant**, especially considering that the band has been active for 25+ years, are the **group members**. The group's composition hasn't changed once, which contributes to the continuous **Rammstein sound**. Comparing **Rammstein** to other Neue Deutsche Härte/metal bands could provide more information on why their sound is so recognizable. Comparing bands within a genre would also expand this research's *external validity*. \
+\
+Analysis of **typical and atypical songs** has shown that although the songs differ, they are obviously a **part of one artist's coherent discography**. The tempo estimation and popularity exploration indicate that it is **not a good idea to take Spotify's data at face value**, as the **algorithms behind the API might be, to some extend, unsound**. As mentioned in the Audio Feature Overview, *danceability* is one of the mysterious features that might raise an issue of *construct validity*. Nevertheless, Spotify API provides a lot of valuable features that can be used for MIR and musicological research. \
+\
+I would like to mention one drawback, that is the fact that **lyrics** were not taken into account for this research. Lyrical content is of crucial importance to **Rammstein**, as Till *poetically* sings about taboo topics, such as *cannibalism* ([Mein Teil](https://open.spotify.com/track/4Hp6GJYHQxhb3OyFicO79j)), *stalking* ([Du Riechst So Gut](https://open.spotify.com/track/73se54LukI1xEPE8XKsrWf?si=e6298d1a28e24a74)) and *pyromania* ([Benzin](https://open.spotify.com/track/1XanLfYUUBB6bLbnSh1KyU?si=786767a37bd04984)). Most of the lyrics are inspired or based on real-life events. Conducting **sentiment analysis** on the lyrics and **analyzing Spotify API's provided features** would be useful for future research. Such a combination would control for a possible confounding variable, that is lyrical content, that might have altered the *internal validity* of the current research. \
+\
+I hope that this informal exploratory research can **motivate** at least one person to look into Spotify and investigate their favourite musician's discography. I believe that the analysis techniques and findings provide insights for any curious reader on **how Spotify Audio Features can be used to analyze audio on different levels**. The majority know **Spotify** merely as a *streaming service*, but it is truly amazing at how much information is **freely available** and can be extracted from Spotify API! 
+
 ***
-<img src="chroma features.png" width="60%">
-***
-blaaaa
+<img src="banner.png" width="100%">
